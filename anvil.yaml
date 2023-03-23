@@ -16,9 +16,9 @@ services:
 startup: {type: form, module: Lists}
 package_name: Change_Notes
 allow_embedding: false
-name: Clone of Change Notes v1.3 22_03_2023
+name: Change Notes v 0.4 23_03_2023
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: Change Notes v1.3 22_03_2023}
+metadata: {title: Change Notes v 0.4 23_03_2023}
 db_schema:
   stage_log:
     title: stage_log

@@ -169,13 +169,13 @@ class Change_note(Change_noteTemplate):
     
   def payoff_textbox_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    if self.difficulty_textbox.text and self.payoff_textbox.text:
+    if not self.difficulty_textbox.text == 0 and not self.payoff_textbox.text  == 0:
          set_pick(self)
                      
     else:
         self.pick_textbox.text =  "5 Not Defined."
         
-        alert('Difficulty must be between 1 and 10')
+        # alert('Difficulty must be between 1 and 10')
    
 
     
@@ -243,13 +243,13 @@ class Change_note(Change_noteTemplate):
 
   def difficulty_textbox_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    if self.difficulty_textbox.text and self.payoff_textbox.text:
+    if not self.difficulty_textbox.text == 0 and not self.payoff_textbox.text == 0:
          set_pick(self)
                      
     else:
         self.pick_textbox.text =  "5 Not Defined."
         
-        alert('Difficulty must be between 1 and 10')
+        # alert('Difficulty must be between 1 and 10')
     
   pass
 
@@ -309,6 +309,11 @@ class Change_note(Change_noteTemplate):
     """This method is called when the button is clicked"""#
     save_routine(self)
     pass
+
+  def difficulty_textbox_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+
 
 
 

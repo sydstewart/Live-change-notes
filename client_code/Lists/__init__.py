@@ -114,7 +114,7 @@ class Lists(ListsTemplate):
         print('audit updated')
         
   def refresh_changes(self):
-    # Load existing articles from the Data Table, and display them in the RepeatingPanel
+
     self.repeating_panel_1.items = app_tables.change_notes.search()
     self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['change_date'], reverse=True )
     self.hits_textbox.text = len(app_tables.change_notes.search())

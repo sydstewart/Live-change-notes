@@ -486,8 +486,8 @@ components:
     layout_properties: {grid_position: 'EXSPXX,XMTQBI IMAMKK,QZOMUD'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Difficulty, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      visible: true, text: Difficulty    10 = Easy, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_17
     layout_properties: {grid_position: 'EXSPXX,XMTQBI DUPLWY,ERZNZY'}
@@ -510,8 +510,8 @@ components:
     layout_properties: {grid_position: 'EXSPXX,XMTQBI DWCVOJ,KBCXNE'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: PayOff, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      visible: true, text: PayOff        10 = High, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_18
     layout_properties: {grid_position: 'EXSPXX,XMTQBI KBSJCA,LWMZYG'}
@@ -535,7 +535,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: IPS, font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
       icon: ''}
     name: label_19
     layout_properties: {grid_position: 'EXSPXX,XMTQBI SARNHM,KVWJYX'}
@@ -552,10 +552,10 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: PICK, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_20
-    layout_properties: {grid_position: 'EXSPXX,XMTQBI LNDJWE,QEAAWM'}
+    layout_properties: {grid_position: 'EXSPXX,XMTQBI LNDJWE,OMLZFH'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
@@ -572,7 +572,7 @@ components:
     layout_properties: {grid_position: 'EXSPXX,GUEZLQ'}
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"WGEFJZ":7,"LSZKYQ":66,"HLNANB":7,"BUKIXD":15,"HRAKVB":45,"CTHXBI":15,"YWAFKZ":45,"KMUSVZ":20,"UEBGUT":40,"OQOYKA":20,"YRAXKE":40,"TPMMDL":20,"ZVZZNA":40,"CUAWOX":20,"KACVCK":40}',
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"WGEFJZ":7,"LSZKYQ":66,"HLNANB":7,"BUKIXD":15,"HRAKVB":45,"CTHXBI":15,"YWAFKZ":45,"KMUSVZ":30,"UEBGUT":30,"OQOYKA":30,"YRAXKE":30,"TPMMDL":30,"ZVZZNA":30,"CUAWOX":30,"KACVCK":30}',
     spacing_below: small, background: 'theme:Gray 200'}
   name: column_panel_6
   layout_properties: {grid_position: 'BHFKTX,GDUMWS MDYKQV,MTVOAZ'}
@@ -591,7 +591,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Worst Case, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_27
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ DTFRHB,BUKIXD', full_width_row: true}
@@ -607,7 +607,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Mitigations, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_28
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ NZKDLE,CTHXBI', full_width_row: true}
@@ -623,7 +623,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Severity, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_29
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ TZYWRP,KMUSVZ', full_width_row: true}
@@ -647,7 +647,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Probability, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_31
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ YALUSW,OQOYKA'}
@@ -670,9 +670,9 @@ components:
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ AFQSXN,YBDDRT'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Visibility, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+      visible: true, text: Visibility      1  = Obvious, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
     name: label_30
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ SQLZCA,TPMMDL'}
   - type: TextBox
@@ -695,7 +695,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: RPN, font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
       icon: ''}
     name: label_32
     layout_properties: {grid_position: 'JRMBLB,LSZKYQ DTNUTU,CUAWOX'}
@@ -737,7 +737,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Due date, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_22
     layout_properties: {grid_position: 'HEBAAT,CDQVCM TSKVLA,FXNUHR'}
@@ -753,7 +753,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Investigator, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_23
     layout_properties: {grid_position: 'HEBAAT,CDQVCM MXXZFD,AAEYNK'}
@@ -784,7 +784,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Possible Solution, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_24
     layout_properties: {grid_position: 'HEBAAT,CDQVCM ZNVLXM,CVXNUE'}
@@ -800,7 +800,7 @@ components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Released in Version, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_26
     layout_properties: {grid_position: 'HEBAAT,CDQVCM ANABBI,YDTUEP'}
