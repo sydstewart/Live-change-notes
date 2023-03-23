@@ -27,7 +27,9 @@ class Lists(ListsTemplate):
     user_type = anvil.users.get_user()['user_type']
     
     result = anvil.server.call('get_datetime')
-    self.repeating_panel_1.items = app_tables.change_notes.search()
+    self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('change_date', ascending = False))
+    
+    # self.repeating_panel_1.items = app_tables.change_notes.search()
     self.hits_textbox.text = len(app_tables.change_notes.search())
     # functions= list({(r['function']) for r in app_tables.suppported_products.search()})
 
