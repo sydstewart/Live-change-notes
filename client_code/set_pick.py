@@ -10,7 +10,7 @@ def set_pick(self):
       if self.difficulty_textbox.text and self.payoff_textbox.text:
           if (self.difficulty_textbox.text) <= 10: #or int(self.difficulty_textbox.text) >= 1:
                       self.ips_textbox.text= self.difficulty_textbox.text * self.payoff_textbox.text
-                      if  self.difficulty_textbox.text >= 5 and self.payoff_textbox.text > 5:
+                      if  self.difficulty_textbox.text >= 5 and self.payoff_textbox.text >= 5:
                           self.pick_textbox.text = "1. Implement"
                       elif  self.difficulty_textbox.text <  5 and self.difficulty_textbox.text >= 1 and self.payoff_textbox.text >= 5:
                         self.pick_textbox.text = "2. Challenge"
