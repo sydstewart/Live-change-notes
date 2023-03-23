@@ -221,7 +221,8 @@ def search_using_kwargs(self):
           kwargs['priority'] = search12
       
     print('kwargs=',kwargs)
-    results = app_tables.change_notes.search(**kwargs)
+    results= app_tables.change_notes.search(tables.order_by('change_date', ascending = False),**kwargs)
+    # results = app_tables.change_notes.search(**kwargs)
     print('results', results)
     self.repeating_panel_1.items = results
     self.hits_textbox.text  = len(results)

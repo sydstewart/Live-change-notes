@@ -187,7 +187,7 @@ class Lists(ListsTemplate):
     self.priority_search_dropdown.selected_value = None
     # self.no_change_date_chkbox.checkbox = False
     #Initial Search             
-    results = app_tables.change_notes.search()
+    results = app_tables.change_notes.search(tables.order_by('change_date', ascending = False))
 
     self.repeating_panel_1.items = results
     #Hits
