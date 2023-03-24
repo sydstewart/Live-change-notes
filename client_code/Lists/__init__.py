@@ -366,6 +366,30 @@ class Lists(ListsTemplate):
     open_form('Lists')
     pass
 
+  def due_date_sort_chkbox_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    if self.due_date_sort_chkbox.checked == True:
+          self.ips_check_box.checked = False
+          self.pick_sort_chkbox.checked = False
+          self.priority_sort_checkbox.checked = False
+          self.RPN_sort_checkbox.checked = False
+          self.change_note_date_search_chkbox.checked == False
+          self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('due_date', ascending = False), \
+                                                                        type ='Safety', classid = 'Defect'   \
+                                                                       , stage = q.none_of('Released', 'Reviewed', 'Rejected'))
+    else:     
+                                                                                           
+          self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('due_date', ascending = True), \
+                                                                        type ='Safety', classid = 'Defect', \
+                                                                        stage = q.none_of('Released', 'Reviewed', 'Rejected'))
+    
+    
+    
+  
+    
+    pass
+
+
 
 
 
