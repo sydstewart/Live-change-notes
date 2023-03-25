@@ -271,16 +271,28 @@ class Change_note(Change_noteTemplate):
 
   def severity_number_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    set_priority(self)
+    if not self.date_picker_1.date:   
+        alert(' Please enter a Change Note Create Date before calculating the RPN so that a Due Date can be calculated, depending on the priority set.')
+    else: 
+        set_priority(self)
 
 
   def probability_number_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    set_priority(self)
+    if not self.date_picker_1.date:   
+        alert(' Please enter a Change Note Create Date before calculating the RPN so that a Due Date can be calculated, depending on the priority set.')
+    else: 
+        set_priority(self)
 
+     
   def visibility_number_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    set_priority(self)
+    if not self.date_picker_1.date:   
+        alert(' Please enter a Change Note Create Date before calculating the RPN so that a Due Date can be calculated, depending on the priority set.')
+    else: 
+        set_priority(self)
+
+     
 
 
   def change_cancel_btn_click(self, **event_args):
@@ -313,6 +325,11 @@ class Change_note(Change_noteTemplate):
   def difficulty_textbox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     pass
+
+  def IPS_textbox_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    pass
+
 
 
 

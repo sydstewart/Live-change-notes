@@ -8,7 +8,7 @@ from datetime import datetime, time , date , timedelta
 
 
 def set_priority(self):
-  if self.severity_number.text and  self.probability_number.text and self.visibility_number.text:
+  if self.severity_number.text and  self.probability_number.text and self.visibility_number.text :
         self.rpn_number.text = self.severity_number.text * self.probability_number.text * self.visibility_number.text
         if self.rpn_number.text > 100:
           self.priority_textbox.text = "1. High Priority"
@@ -25,3 +25,6 @@ def set_priority(self):
         self.item['rpn '] = self.rpn_number.text
         self.item['priority']= self.priority_textbox.text
         self.item['due_date'] =self.due_date.date
+         
+ 
+    
