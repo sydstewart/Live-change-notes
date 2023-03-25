@@ -213,13 +213,14 @@ def search_using_kwargs(self):
 # # Creator
     if search10:
        kwargs['user']= search10
-
+# over_due_chkbox.checked ( removed)
     if search11 == True:
           kwargs['due_date'] =  q.less_than_or_equal_to(datetime.today())
           kwargs['stage'] = q.none_of('Released', 'Reviewed', 'Archive','Rejected')
+# Priority     
     if search12:
           kwargs['priority'] = search12
-      
+# Search using kwargs      
     print('kwargs=',kwargs)
     results= app_tables.change_notes.search(tables.order_by('change_date', ascending = False),**kwargs)
     # results = app_tables.change_notes.search(**kwargs)
