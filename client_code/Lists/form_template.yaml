@@ -95,7 +95,7 @@ components:
     layout_properties: {grid_position: 'WOHPCZ,GTOZSS', full_width_row: true}
     components:
     - type: ColumnPanel
-      properties: {col_widths: '{"QMCDFR":2,"RPZGPK":4,"QXTBJR":5,"FQXRVI":5,"MDFHVI":5,"CJKLMN":5,"BXRYEI":5,"AXETKK":5,"YBHHIF":10,"LHADXX":5,"TNYBIN":2,"ZIKZGY":8,"GDUDHR":8,"FRFTJW":2,"IXNVJM":2,"IRGJPW":6,"DBDYRZ":4,"RGOZCH":8,"HYYWDP":2,"MFYDET":7,"MFERCC":4,"OAMWKC":7,"WCKEUB":5}'}
+      properties: {col_widths: '{"QMCDFR":2,"RPZGPK":4,"QXTBJR":5,"FQXRVI":5,"MDFHVI":11,"CJKLMN":5,"BXRYEI":5,"AXETKK":5,"YBHHIF":10,"LHADXX":5,"TNYBIN":2,"ZIKZGY":8,"GDUDHR":8,"FRFTJW":2,"IXNVJM":2,"IRGJPW":6,"DBDYRZ":2,"RGOZCH":2,"HYYWDP":2,"MFYDET":7,"MFERCC":4,"OAMWKC":7,"WCKEUB":5,"WGIOUP":6}'}
       name: content_panel
       layout_properties: {slot: default, grid_position: 'EBYAGG,DJKOYT', full_width_row: true}
       components:
@@ -199,7 +199,7 @@ components:
         event_bindings: {change: search_class_drop_down_change}
       - type: Label
         properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Creator, font_size: null, font: '', spacing_above: small,
+          visible: true, text: Creator, font_size: 12, font: '', spacing_above: small,
           icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
           underline: false, icon: ''}
         name: label_13
@@ -227,6 +227,36 @@ components:
         name: search_creator_dropdown
         layout_properties: {grid_position: 'FKNTLE,IRGJPW', full_width_row: true}
         event_bindings: {change: search_creator_dropdown_change}
+      - type: Label
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+          visible: true, text: Investig'or, font_size: 12, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+          underline: false, icon: ''}
+        name: label_17
+        layout_properties: {grid_position: 'FKNTLE,DPENZI', full_width_row: true}
+      - type: DropDown
+        properties:
+          role: null
+          align: full
+          tooltip: ''
+          placeholder: ''
+          border: ''
+          enabled: true
+          foreground: ''
+          items: []
+          visible: true
+          font_size: 12
+          font: ''
+          spacing_above: small
+          spacing_below: small
+          italic: false
+          background: ''
+          bold: true
+          underline: false
+          include_placeholder: true
+        name: search_investigator_dropdown
+        layout_properties: {grid_position: 'FKNTLE,WGIOUP', full_width_row: true}
+        event_bindings: {change: investigator_dropdown_change}
       - type: CheckBox
         properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
           foreground: '', allow_indeterminate: false, visible: true, text: Late, font_size: 14,
@@ -493,7 +523,7 @@ components:
         width: '130'}
       - {id: LGQKLC, title: Change Date, data_key: change_date, $$hashKey: 'object:60218',
         width: '110'}
-      - {id: ZIWPGV, title: Title, data_key: title, width: 217, expand: false, $$hashKey: 'object:60219'}
+      - {id: ZIWPGV, title: Title, data_key: title, width: 163, expand: false, $$hashKey: 'object:60219'}
       - {id: LCUUMY, title: Product Area, data_key: product_area, $$hashKey: 'object:60220',
         width: '90', expand: false}
       - {id: NOOEGX, title: Function, data_key: function, $$hashKey: 'object:60221',
@@ -508,9 +538,10 @@ components:
       - {id: ZHZCEQ, title: PICK, data_key: pick, $$hashKey: 'object:60227', width: '100'}
       - {id: OTRITV, title: RPN, data_key: rpn, $$hashKey: 'object:60228', width: '40'}
       - {id: XNVFXY, title: Due Date, data_key: due_date, width: '120', $$hashKey: 'object:60229'}
-      - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: '60'}
-      - {id: JXPYTS, title: Investigator, data_key: '[investigator][firstname]', $$hashKey: 'object:572',
-        width: '60'}
+      - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: '50',
+        expand: false}
+      - {id: JXPYTS, title: Investigator, data_key: '', $$hashKey: 'object:572', width: '50',
+        expand: false}
       - {id: OMPHUL, title: Edit, data_key: column_1, $$hashKey: 'object:60230'}
       - {id: XQCSZQ, title: Audit, data_key: column_3, $$hashKey: 'object:60232'}
       auto_header: true
@@ -525,7 +556,7 @@ components:
       spacing_below: small
       background: ''
     name: data_grid_1
-    layout_properties: {grid_position: 'AMOIQN,HXUXTN', full_width_row: true}
+    layout_properties: {grid_position: 'WWPKVJ,FQKQGT', full_width_row: true}
     components:
     - type: RepeatingPanel
       properties: {spacing_above: none, spacing_below: none, item_template: Lists.RowTemplate1}

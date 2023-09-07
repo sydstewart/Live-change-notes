@@ -45,6 +45,7 @@ class Lists(ListsTemplate):
     for row in users:
       userlist.append(row['email'])
     self.search_creator_dropdown.items = userlist
+    self.search_investigator_dropdown.items = userlist
 # priority
     priority =list({(r['priority']) for r in app_tables.change_notes.search(tables.order_by('priority'))})
     self.priority_search_dropdown.items = priority 
@@ -388,6 +389,14 @@ class Lists(ListsTemplate):
   
     
     pass
+
+
+  def investigator_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    search_using_kwargs(self)
+    pass
+
+
 
 
 
