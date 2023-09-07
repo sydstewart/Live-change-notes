@@ -1,30 +1,25 @@
 container: {type: DataRowPanel}
 components:
 - type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: 'fa:pencil'}
+  properties: {role: null, align: full, tooltip: '', border: '', enabled: true, foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: 'fa:pencil'}
   name: button_1
   layout_properties: {column: OMPHUL}
   event_bindings: {click: button_1_click}
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: '', bold: true, underline: false}
-  name: text_box_1
-  layout_properties: {column: FJLNPA}
-  data_bindings:
-  - {property: text, code: 'self.item[''priority'']', writeback: true}
 - type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: 'fa:server'}
+  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: 'fa:server'}
   name: audit_history_button
   layout_properties: {column: XQCSZQ}
   event_bindings: {click: audit_history_button_click}
+- type: TextBox
+  properties: {}
+  name: text_box_1
+  layout_properties: {column: null}
 - type: Button
   properties: {role: null, align: center, tooltip: '', border: '', enabled: false,
     foreground: '', visible: false, text: Stage History, font_size: null, font: '',
@@ -80,4 +75,10 @@ components:
   layout_properties: {column: IXMJFN}
   data_bindings:
   - {property: text, code: 'self.item[''type'']', writeback: false}
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: VOCBPZ}
+  data_bindings:
+  - {property: text, code: 'self.item[''user''][0:10]'}
 is_package: true

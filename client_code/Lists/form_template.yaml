@@ -517,6 +517,8 @@ components:
     properties:
       role: null
       columns:
+      - {id: OMPHUL, title: Edit, data_key: column_1, $$hashKey: 'object:60230', expand: false,
+        width: 96}
       - {id: BNALZD, title: New Change ID, data_key: new_change_note_id, $$hashKey: 'object:374989',
         width: '80'}
       - {id: SUDNGE, title: Old Change ID, data_key: change_note_id, $$hashKey: 'object:60217',
@@ -533,16 +535,16 @@ components:
         width: '110'}
       - {id: OKRRON, title: Defect Improvement, data_key: classid, $$hashKey: 'object:60224',
         width: '140'}
-      - {id: FJLNPA, title: Priority, data_key: priority, $$hashKey: 'object:60225'}
+      - {id: FJLNPA, title: Priority, data_key: priority, $$hashKey: 'object:60225',
+        width: '90'}
       - {id: GKQAOZ, title: IPS, data_key: ips, $$hashKey: 'object:60226', width: '40'}
       - {id: ZHZCEQ, title: PICK, data_key: pick, $$hashKey: 'object:60227', width: '100'}
       - {id: OTRITV, title: RPN, data_key: rpn, $$hashKey: 'object:60228', width: '40'}
       - {id: XNVFXY, title: Due Date, data_key: due_date, width: '120', $$hashKey: 'object:60229'}
-      - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: '50',
+      - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: '120',
         expand: false}
-      - {id: JXPYTS, title: Investigator, data_key: '', $$hashKey: 'object:572', width: '50',
-        expand: false}
-      - {id: OMPHUL, title: Edit, data_key: column_1, $$hashKey: 'object:60230'}
+      - {id: JXPYTS, title: Investigator, data_key: investigator, $$hashKey: 'object:572',
+        width: '120', expand: false}
       - {id: XQCSZQ, title: Audit, data_key: column_3, $$hashKey: 'object:60232'}
       auto_header: true
       tooltip: ''
@@ -556,7 +558,7 @@ components:
       spacing_below: small
       background: ''
     name: data_grid_1
-    layout_properties: {grid_position: 'WWPKVJ,FQKQGT', full_width_row: true}
+    layout_properties: {grid_position: 'WWPKVJ,PKJWHJ', full_width_row: true}
     components:
     - type: RepeatingPanel
       properties: {spacing_above: none, spacing_below: none, item_template: Lists.RowTemplate1}

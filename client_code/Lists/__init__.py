@@ -16,7 +16,10 @@ class Lists(ListsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.data_grid_1.role = 'wide'
+    # self.data_grid_1.columns[15]['width'] = 20
+    # self.data_grid_1.columns[16]['width'] = 20
+    # self.data_grid_1.columns = self.data_grid_1.columns
     # Login
     anvil.users.login_with_form()
     global loggedinuser
