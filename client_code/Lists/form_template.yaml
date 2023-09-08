@@ -493,23 +493,28 @@ components:
         width: '130'}
       - {id: LGQKLC, title: Change Date, data_key: change_date, $$hashKey: 'object:60218',
         width: '110'}
-      - {id: ZIWPGV, title: Title, data_key: title, width: 217, expand: false, $$hashKey: 'object:60219'}
+      - {id: ZIWPGV, title: Title, data_key: title, width: 170, expand: false, $$hashKey: 'object:60219'}
       - {id: LCUUMY, title: Product Area, data_key: product_area, $$hashKey: 'object:60220',
-        width: '90', expand: false}
+        width: 81, expand: false}
       - {id: NOOEGX, title: Function, data_key: function, $$hashKey: 'object:60221',
-        width: '120'}
-      - {id: ZUEUOI, title: Stage, data_key: stage, $$hashKey: 'object:60222', width: '160'}
+        width: 136, expand: false}
+      - {id: ZUEUOI, title: Stage, data_key: stage, $$hashKey: 'object:60222', width: 134,
+        expand: false}
       - {id: IXMJFN, title: Safety Operational, data_key: type, $$hashKey: 'object:60223',
         width: '110'}
       - {id: OKRRON, title: Defect Improvement, data_key: classid, $$hashKey: 'object:60224',
-        width: '140'}
-      - {id: FJLNPA, title: Priority, data_key: priority, $$hashKey: 'object:60225'}
+        width: 109, expand: false}
+      - {id: FJLNPA, title: Priority, data_key: priority, $$hashKey: 'object:60225',
+        width: 69, expand: false}
       - {id: GKQAOZ, title: IPS, data_key: ips, $$hashKey: 'object:60226', width: '40'}
       - {id: ZHZCEQ, title: PICK, data_key: pick, $$hashKey: 'object:60227', width: '100'}
       - {id: OTRITV, title: RPN, data_key: rpn, $$hashKey: 'object:60228', width: '40'}
       - {id: XNVFXY, title: Due Date, data_key: due_date, width: '120', $$hashKey: 'object:60229'}
       - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: '80'}
-      - {id: OMPHUL, title: Edit, data_key: column_1, $$hashKey: 'object:60230'}
+      - {id: MUBCDB, title: Investgtr, data_key: investigator, $$hashKey: 'object:22836',
+        width: '80'}
+      - {id: OMPHUL, title: Edit, data_key: column_1, $$hashKey: 'object:60230', width: 54,
+        expand: false}
       - {id: XQCSZQ, title: Audit, data_key: column_3, $$hashKey: 'object:60232'}
       auto_header: true
       tooltip: ''
