@@ -82,13 +82,13 @@ components:
   - {property: text, code: 'self.item[''type'']', writeback: false}
 - type: Label
   properties: {}
-  name: label_1
+  name: creator_label
   layout_properties: {column: VOCBPZ}
   data_bindings:
   - {property: text, code: 'self.item[''user''][0:7]'}
 - type: Label
   properties: {}
-  name: label_2
+  name: investigatr_label
   layout_properties: {column: MUBCDB}
   data_bindings:
   - {property: text, code: 'self.item[''investigator''][0:7] if self.item[''investigator'']
