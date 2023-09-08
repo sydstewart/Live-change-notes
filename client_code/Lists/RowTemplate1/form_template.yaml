@@ -18,10 +18,10 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''priority'']', writeback: true}
 - type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: 'fa:server'}
+  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: 'fa:server'}
   name: audit_history_button
   layout_properties: {column: XQCSZQ}
   event_bindings: {click: audit_history_button_click}
