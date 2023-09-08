@@ -16,10 +16,6 @@ components:
   name: audit_history_button
   layout_properties: {column: XQCSZQ}
   event_bindings: {click: audit_history_button_click}
-- type: TextBox
-  properties: {}
-  name: text_box_1
-  layout_properties: {column: null}
 - type: Button
   properties: {role: null, align: center, tooltip: '', border: '', enabled: false,
     foreground: '', visible: false, text: Stage History, font_size: null, font: '',
@@ -81,4 +77,11 @@ components:
   layout_properties: {column: VOCBPZ}
   data_bindings:
   - {property: text, code: 'self.item[''user''][0:10]'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: JXPYTS}
+  data_bindings:
+  - {property: text, code: 'self.item[''investigator''][0:10] if self.item[''investigator'']
+      else '''''}
 is_package: true

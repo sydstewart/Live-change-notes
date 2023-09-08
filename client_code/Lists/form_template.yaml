@@ -525,7 +525,7 @@ components:
         width: '130'}
       - {id: LGQKLC, title: Change Date, data_key: change_date, $$hashKey: 'object:60218',
         width: '110'}
-      - {id: ZIWPGV, title: Title, data_key: title, width: 163, expand: false, $$hashKey: 'object:60219'}
+      - {id: ZIWPGV, title: Title, data_key: title, width: 151, expand: false, $$hashKey: 'object:60219'}
       - {id: LCUUMY, title: Product Area, data_key: product_area, $$hashKey: 'object:60220',
         width: '90', expand: false}
       - {id: NOOEGX, title: Function, data_key: function, $$hashKey: 'object:60221',
@@ -541,10 +541,10 @@ components:
       - {id: ZHZCEQ, title: PICK, data_key: pick, $$hashKey: 'object:60227', width: '100'}
       - {id: OTRITV, title: RPN, data_key: rpn, $$hashKey: 'object:60228', width: '40'}
       - {id: XNVFXY, title: Due Date, data_key: due_date, width: '120', $$hashKey: 'object:60229'}
-      - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: '120',
+      - {id: VOCBPZ, title: Creator, data_key: user, $$hashKey: 'object:683977', width: 82,
         expand: false}
       - {id: JXPYTS, title: Investigator, data_key: investigator, $$hashKey: 'object:572',
-        width: '120', expand: false}
+        width: 99, expand: false}
       - {id: XQCSZQ, title: Audit, data_key: column_3, $$hashKey: 'object:60232'}
       auto_header: true
       tooltip: ''
