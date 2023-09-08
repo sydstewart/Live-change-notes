@@ -45,6 +45,7 @@ class Lists(ListsTemplate):
     for row in users:
       userlist.append(row['email'])
     self.search_creator_dropdown.items = userlist
+    self.search_investigator_dropdown.items = userlist
 # priority
     priority =list({(r['priority']) for r in app_tables.change_notes.search(tables.order_by('priority'))})
     self.priority_search_dropdown.items = priority 
@@ -184,6 +185,7 @@ class Lists(ListsTemplate):
     self.start_date_picker.date = None
     self.end_date_picker.date =None
     self.search_creator_dropdown.selected_value = None
+    self.search_investigator_dropdown.selected_value = None
     self.priority_search_dropdown.selected_value = None
     # self.no_change_date_chkbox.checkbox = False
     #Initial Search             
@@ -300,6 +302,11 @@ class Lists(ListsTemplate):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
     pass
+    
+  def search_investigator_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    search_using_kwargs(self)
+    pass
 
   def no_change_date_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
@@ -388,6 +395,9 @@ class Lists(ListsTemplate):
   
     
     pass
+
+
+
 
 
 

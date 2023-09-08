@@ -28,7 +28,7 @@ def search_using_kwargs(self):
     search10 = self.search_creator_dropdown.selected_value
     search11 = self.over_due_chkbox.checked
     search12 = self.priority_search_dropdown.selected_value
-   
+    search14 = self.search_investigator_dropdown.selected_value
  #============================================================================================================
 #search6 defined
     if self.date_search_dropdown.selected_value ==  'This week':
@@ -213,6 +213,10 @@ def search_using_kwargs(self):
 # # Creator
     if search10:
        kwargs['user']= search10
+# Investigator
+    if search14:
+        kwargs['investigator']= search14
+      
 # over_due_chkbox.checked ( removed)
     if search11 == True:
           kwargs['due_date'] =  q.less_than_or_equal_to(datetime.today())
