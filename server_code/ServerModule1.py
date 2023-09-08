@@ -232,7 +232,7 @@ def change_id_number():
         counter = str(counter).zfill(6) 
         return year, counter
 
-@tables.in_transaction
+@tables.in_transaction   #see https://anvil.works/forum/t/answered-auto-incrementing-field/1344
 def get_next_value_in_sequence():
   row = app_tables.change_id_counter.get()
   row['counter'] = row['counter'] + 1
