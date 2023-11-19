@@ -18,7 +18,7 @@ services:
 startup: {type: form, module: Lists}
 package_name: Change_Notes
 allow_embedding: false
-name: Clone of Live Change Notes
+name: Dev of Live Change Notes
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
 metadata: {title: Change Notes v 0.4 23_03_2023}
 db_schema:
