@@ -20,7 +20,7 @@ package_name: Change_Notes
 allow_embedding: false
 name: Dev of Live Change Notes
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: Change Notes v 0.4 23_03_2023}
+metadata: {title: Live Change Notes}
 db_schema:
   usersold:
     title: UsersOld
