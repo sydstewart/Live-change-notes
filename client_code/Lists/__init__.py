@@ -215,6 +215,7 @@ class Lists(ListsTemplate):
   def ips_check_box_change(self, **event_args):
         """This method is called when this checkbox is checked or unchecked"""
         if self.ips_check_box.checked == True:
+              self.sort_by_new_change_id_checkbox.checked = False
               self.priority_sort_checkbox.checked = False
               self.RPN_sort_checkbox.checked = False
               self.pick_sort_chkbox.checked = False
@@ -226,6 +227,7 @@ class Lists(ListsTemplate):
   def pick_sort_chkbox_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
     if self.pick_sort_chkbox.checked == True:
+          self.sort_by_new_change_id_checkbox.checked = False
           self.priority_sort_checkbox.checked = False
           self.RPN_sort_checkbox.checked = False
           self.ips_check_box.checked = False
@@ -237,6 +239,7 @@ class Lists(ListsTemplate):
   def RPN_sort_checkbox_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
     if self.RPN_sort_checkbox.checked == True:
+          self.sort_by_new_change_id_checkbox.checked = False
           self.ips_check_box.checked = False
           self.pick_sort_chkbox.checked = False
           self.priority_sort_checkbox.checked = False
@@ -248,6 +251,7 @@ class Lists(ListsTemplate):
   def priority_sort_checkbox_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
     if self.priority_sort_checkbox.checked == True:
+          self.sort_by_new_change_id_checkbox.checked = False
           self.ips_check_box.checked = False
           self.pick_sort_chkbox.checked = False
           self.RPN_sort_checkbox.checked = False
@@ -260,6 +264,7 @@ class Lists(ListsTemplate):
   def change_note_date_search_chkbox_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
     if self.change_note_date_search_chkbox.checked == True:
+          self.sort_by_new_change_id_checkbox.checked = False
           self.ips_check_box.checked = False
           self.pick_sort_chkbox.checked = False
           self.RPN_sort_checkbox.checked = False
@@ -268,6 +273,24 @@ class Lists(ListsTemplate):
     else:
           self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['change_date']), reverse=True )
 
+  def sort_by_new_change_id_checkbox_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    if self.sort_by_new_change_id_checkbox.checked == True:
+              self.priority_sort_checkbox.checked = False
+              self.ips_check_box.checked = False
+              self.RPN_sort_checkbox.checked = False
+              self.pick_sort_chkbox.checked = False
+              self.change_note_date_search_chkbox.checked = False
+              self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['new_change_note_id']), reverse=True )
+    else:
+              self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['new_change_note_id']), reverse=False ) 
+
+  
+  
+  
+  
+  
+  
   def  id_search_textbox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     search_using_kwargs(self)
@@ -396,17 +419,7 @@ class Lists(ListsTemplate):
     
     pass
 
-  def sort_by_new_change_id_checkbox_change(self, **event_args):
-    """This method is called when this checkbox is checked or unchecked"""
-    if self.sort_by_new_change_id_checkbox.checked == True:
-              self.priority_sort_checkbox.checked = False
-              self.RPN_sort_checkbox.checked = False
-              self.pick_sort_chkbox.checked = False
-              self.change_note_date_search_chkbox.checked = False
-              self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['new_change_note_id']), reverse=True )
-    else:
-              self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['new_change_note_id']), reverse=False ) 
-
+ 
 
 
 
