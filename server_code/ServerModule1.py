@@ -13,7 +13,33 @@ from .pick_calc import set_pick
 def get_datetime():
   return datetime.now()
 
-
+@tables.in_transaction  
+@anvil.server.callable
+def Test_insert(result):
+  datetoday = datetime.now()
+  year = datetoday.year 
+  print('Year=', year)
+  # self.change_id_textbox.text = year
+  row = app_tables.change_id_counter.get()
+  row['counter'] = row['counter'] + 1
+  counter = row['counter']
+  print('Counter in Change_id=',counter)
+  counter = str(counter).zfill(6) 
+  new_change_note_id = str(year) + '-' +str(counter)
+  result['new_change_note_id'] = new_change_note_id
+  
+  app_tables.change_notes.add_row(**result)
+  
+  loggedinuser =  anvil.users.get_user()['email']
+  result['user_changed'] = loggedinuser
+  result['when_changed'] = datetime.now()
+  app_tables.change_notes_audit.add_row(**result)
+  print(result)
+  check = app_tables.change_notes.search(new_change_note_id=new_change_note_id)
+  return check
+     
+  if not app_tables.change_notes.has_row(change_notes):
+     raise Exception("Change Note does not exist")
 
 @anvil.server.callable
 def delete_change_note(change_note):

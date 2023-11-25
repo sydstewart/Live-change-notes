@@ -9,9 +9,9 @@ components:
     foreground: '', visible: true, text: Save, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
     underline: false, icon: ''}
-  name: save_button
+  name: top_save_button
   layout_properties: {grid_position: 'UYTVZQ,UEOHHO'}
-  event_bindings: {click: save_button_click}
+  event_bindings: {click: top_save_button_click}
 - type: Button
   properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
