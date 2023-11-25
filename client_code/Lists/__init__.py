@@ -103,21 +103,21 @@ class Lists(ListsTemplate):
     content = Change_note()
     result = alert(content, buttons=[], title = 'New Change Note', large=True)
     print(result)
-    if result:
-        print('User=', loggedinuser)
-        # change_note_id = (result['product_area'] ) #+ ' ' + result['user']  ) # + str( result['change_date']) + ' '
-        app_tables.change_notes.add_row(**result)
-        print('changes- updated')
-        print('User=', loggedinuser)
-        result['user_changed'] = loggedinuser
-        result['when_changed'] = datetime.now()
-        app_tables.change_notes_audit.add_row(**result)
-        print('audit updated')
+    self.refresh_changes()
+    # if result:
+    #     print('User=', loggedinuser)
+    #     # change_note_id = (result['product_area'] ) #+ ' ' + result['user']  ) # + str( result['change_date']) + ' '
+    #     app_tables.change_notes.add_row(**result)
+    #     print('changes- updated')
+    #     print('User=', loggedinuser)
+    #     result['user_changed'] = loggedinuser
+    #     result['when_changed'] = datetime.now()
+    #     app_tables.change_notes_audit.add_row(**result)
+    #     print('audit updated')
         
   def refresh_changes(self):
-
     self.repeating_panel_1.items = app_tables.change_notes.search()
-    self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['change_date'], reverse=True )
+    self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
     self.hits_textbox.text = len(app_tables.change_notes.search())
 
   def stage_search_dropdown_change(self, **event_args):
