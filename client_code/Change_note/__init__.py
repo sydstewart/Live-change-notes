@@ -238,9 +238,9 @@ class Change_note(Change_noteTemplate):
     
    
 
-  def save_button_click(self,  **event_args):
-    """This method is called when the button is clicked"""
-    save_routine(self)
+  # def save_button_click(self,  **event_args):
+  #   """This method is called when the button is clicked"""
+  #   save_routine(self)
  
   def top_save_button_click(self, **event_args):
     """This method is called when the button is clicked"""#
