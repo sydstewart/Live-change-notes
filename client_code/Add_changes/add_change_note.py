@@ -51,7 +51,7 @@ def add_change_note(self):
                                   'found_in_version_no' : self.found_in_version_dropdown.selected_value
                                 }
                         self.raise_event('x-close-alert', value=result)
-                        check = anvil.server.call('Test_insert', result)
+                        check = anvil.server.call('change_insert', result)
                         if check:
                           alert(' Change Note added successfully')
                         else:

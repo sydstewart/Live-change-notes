@@ -15,7 +15,7 @@ def get_datetime():
 
 @tables.in_transaction  
 @anvil.server.callable
-def Test_insert(result):
+def change_insert(result):
   datetoday = datetime.now()
   year = datetoday.year 
   print('Year=', year)
