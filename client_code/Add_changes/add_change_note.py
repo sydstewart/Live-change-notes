@@ -60,7 +60,7 @@ def add_change_note(self):
                         
           else:
                         print(self.validator.are_all_valid())
-    else:
+    else: # edit as new change_id exists
           if self.validator.are_all_valid():
                         result = {
                                   'new_change_note_id' :  self.text_box_1.text,
