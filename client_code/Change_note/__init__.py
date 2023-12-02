@@ -421,6 +421,10 @@ class Change_note(Change_noteTemplate):
     """This method is called when the text in this text box is edited"""
     pass
 
+  def due_date_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    pass
+
   
 
 

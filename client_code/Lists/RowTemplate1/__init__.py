@@ -121,9 +121,17 @@ class RowTemplate1(RowTemplate1Template):
       anvil.server.call('delete_change_note', self.item)
     pass
 
-  def type_textbox_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass
+  # def type_textbox_pressed_enter(self, **event_args):
+  #   """This method is called when the user presses Enter in this text box"""
+  #   pass
+
+  # def text_box_2_pressed_enter(self, **event_args):
+  #   """This method is called when the user presses Enter in this text box"""
+  #   pass
+
+  # def text_box_1_pressed_enter(self, **event_args):
+  #   """This method is called when the user presses Enter in this text box"""
+  #   pass
 
 
 

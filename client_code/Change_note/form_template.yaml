@@ -54,7 +54,7 @@ components:
     layout_properties: {grid_position: 'KHPKMU,KLSEZG YXXNMG,PLLNNZ VAZJJI,VWMISK'}
     data_bindings:
     - {property: text, code: 'self.item[''new_change_note_id'']', writeback: true}
-    event_bindings: {pressed_enter: text_box_1_pressed_enter}
+    event_bindings: {}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
@@ -750,6 +750,7 @@ components:
     layout_properties: {grid_position: 'HEBAAT,CDQVCM TSKVLA,ZHMYUR'}
     data_bindings:
     - {property: date, code: 'self.item[''due_date'']', writeback: true}
+    event_bindings: {change: due_date_change}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Investigator, font_size: null, font: '', spacing_above: small,

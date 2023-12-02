@@ -26,6 +26,7 @@ components:
   layout_properties: {column: FJLNPA}
   data_bindings:
   - {property: text, code: 'self.item[''priority'']', writeback: true}
+  event_bindings: {pressed_enter: text_box_1_pressed_enter}
 - type: Button
   properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
     visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
@@ -79,5 +80,5 @@ components:
 - type: DatePicker
   properties: {}
   name: due_date_picker
-  layout_properties: {column: null}
+  layout_properties: {column: ZIWPGV}
 is_package: true
