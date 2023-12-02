@@ -48,7 +48,7 @@ class RowTemplate1(RowTemplate1Template):
     
     if result:
         loggedinuser = anvil.users.get_user()['email']
-        anvil.server.call('update_change',self.item,change_copy, loggedinuser )
+        anvil.server.call('update_change',  change_copy, loggedinuser )
 
         self.refresh_data_bindings()   
         alert("Record Updated")

@@ -226,7 +226,8 @@ def update_change( change_copy, loggedinuser):
 #   change_dict['pick'] = set_pick(self)
   print('pick in update=', change_copy['pick'])
   
-  if app_tables.change_notes.get(new_change_note_id= change_copy['new_change_note_id']):
+  change_notes = app_tables.change_notes.get(new_change_note_id = change_copy['new_change_note_id'])
+  if change_notes:
       change_notes.update(**change_copy)
       change_copy['user_changed'] = loggedinuser
       change_copy['when_changed'] = datetime.now()

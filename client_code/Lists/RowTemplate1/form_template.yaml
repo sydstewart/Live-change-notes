@@ -25,24 +25,6 @@ components:
   name: audit_history_button
   layout_properties: {column: XQCSZQ}
   event_bindings: {click: audit_history_button_click}
-- type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: false,
-    foreground: '', visible: false, text: Stage History, font_size: null, font: '',
-    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
-    bold: false, underline: false, icon: ''}
-  name: edit_button
-  layout_properties: {column: null}
-  event_bindings: {click: edit_button_click}
-- type: DatePicker
-  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
-    placeholder: '', border: '', enabled: false, foreground: '', visible: true, font_size: 12,
-    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-    min_date: '', background: '', bold: true, underline: false, format: YYYY-MM-DD}
-  name: due_date_picker
-  layout_properties: {column: XNVFXY}
-  data_bindings:
-  - {property: date, code: 'self.item[''due_date'']', writeback: false}
-  event_bindings: {change: due_date_picker_change}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
