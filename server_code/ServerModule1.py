@@ -217,19 +217,21 @@ def store_data(file):
 
       
 @anvil.server.callable
-def update_change(change_notes, change_copy, loggedinuser):
-  print('change_copy', change_copy)
+def update_change( change_copy, loggedinuser):
+  print('change_copy xxx', change_copy)
+  print('Loggedinuser=', loggedinuser)
   change_copy['ips'] = change_copy['difficulty'] * change_copy['payoff']
   change_copy['rpn'] = change_copy['severity']*change_copy['probability']*change_copy['visibility']
 #   change_copy['pick'] = set_pick(self)
 #   change_dict['pick'] = set_pick(self)
   print('pick in update=', change_copy['pick'])
-  if app_tables.change_notes.has_row(change_notes):
-    change_notes.update(**change_copy)
-    change_copy['user_changed'] = loggedinuser
-    change_copy['when_changed'] = datetime.now()
-    print('change_copy' ,change_copy)
-    app_tables.change_notes_audit.add_row(**change_copy)
+  
+  if app_tables.change_notes.get(new_change_note_id= change_copy['new_change_note_id']):
+      change_notes.update(**change_copy)
+      change_copy['user_changed'] = loggedinuser
+      change_copy['when_changed'] = datetime.now()
+      print('change_copy' ,change_copy)
+      app_tables.change_notes_audit.add_row(**change_copy)
   else:
     raise Exception("Change Note does not exist")
     

@@ -92,6 +92,8 @@ def add_change_note(self):
                                   'found_in_version_no' : self.found_in_version_dropdown.selected_value
                                 }
                         self.raise_event('x-close-alert', value=result)
+                        loggedinuser =  anvil.users.get_user()['email']
+                        print('LoggedinUser=',loggedinuser)
                         anvil.server.call('update_change', result, loggedinuser)
           else:
                         print(self.validator.are_all_valid())
