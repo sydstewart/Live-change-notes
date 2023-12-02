@@ -1,5 +1,14 @@
 container: {type: DataRowPanel}
 components:
+- type: TextArea
+  properties: {role: null, align: left, height: '', tooltip: '', placeholder: '',
+    border: '', enabled: false, foreground: '', visible: true, text: '', font_size: 12,
+    auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: text_area_2
+  layout_properties: {column: SUDNGE}
+  data_bindings:
+  - {property: text, code: 'self.item[''change_note_id'']', writeback: false}
 - type: Button
   properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
@@ -35,15 +44,6 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''change_date''] ', writeback: false}
   event_bindings: {pressed_enter: text_box_2_pressed_enter}
-- type: TextArea
-  properties: {role: null, align: left, height: '', tooltip: '', placeholder: '',
-    border: '', enabled: false, foreground: '', visible: true, text: '', font_size: 12,
-    auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: text_area_2
-  layout_properties: {column: SUDNGE}
-  data_bindings:
-  - {property: text, code: 'self.item[''change_note_id'']', writeback: false}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
@@ -62,6 +62,7 @@ components:
   layout_properties: {column: IXMJFN}
   data_bindings:
   - {property: text, code: 'self.item[''type'']', writeback: false}
+  event_bindings: {pressed_enter: type_textbox_pressed_enter}
 - type: Label
   properties: {}
   name: creator_label
@@ -75,4 +76,8 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''investigator''][0:7] if self.item[''investigator'']
       else '''''}
+- type: DatePicker
+  properties: {}
+  name: due_date_picker
+  layout_properties: {column: null}
 is_package: true
