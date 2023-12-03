@@ -1,7 +1,7 @@
 container:
   type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: large, spacing_above: small, col_widths: '{"XZKKQF":40,"UPJCIM":35,"GDUMWS":35,"SZBVRL":70,"MTVOAZ":55,"FALJXJ":5,"SCXHQU":55,"JIYUZK":5}',
+    wrap_on: mobile, col_spacing: large, spacing_above: small, col_widths: '{"XZKKQF":40,"UPJCIM":35,"GDUMWS":35,"SZBVRL":70,"MTVOAZ":54,"FALJXJ":6,"SCXHQU":55,"JIYUZK":5}',
     spacing_below: small, background: ''}
 components:
 - type: Button

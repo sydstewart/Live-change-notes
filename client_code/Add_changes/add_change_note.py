@@ -94,7 +94,12 @@ def add_change_note(self):
                         self.raise_event('x-close-alert', value=result)
                         loggedinuser =  anvil.users.get_user()['email']
                         print('LoggedinUser=',loggedinuser)
-                        anvil.server.call('update_change', result, loggedinuser)
+                        check = anvil.server.call('update_change', result, loggedinuser)
+                        # check = anvil.server.call('change_insert', result)
+                        if check:
+                          alert(' Change Note edited successfully')
+                        else:
+                          alert(' Change Note NOT successfully edited')
                         
           else:
                         print(self.validator.are_all_valid())

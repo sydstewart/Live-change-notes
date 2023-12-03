@@ -9,6 +9,7 @@ from ...Change_note import Change_note
 from datetime import datetime, time , date , timedelta
 from ...audit_history import audit_history
 from .. import Lists
+from ...Add_changes import add_change_note
 
 
 class RowTemplate1(RowTemplate1Template):
@@ -47,17 +48,17 @@ class RowTemplate1(RowTemplate1Template):
         self.item['priority'] =change_copy['priority']
      
     result = alert(content=Change_note(item=change_copy), title="Update Change Note", buttons=[], large=True)
-    
-    if result:
-        loggedinuser = anvil.users.get_user()['email']
-        anvil.server.call('update_change',  change_copy, loggedinuser )
-
-        open_form('Lists')
-        alert("Record Updated")
+ 
+    # if result:
+    #     loggedinuser = anvil.users.get_user()['email']
+    #     # anvil.server.call('update_change',  change_copy, loggedinuser )
+    #     add_change_note(self)
+    #     open_form('Lists')
+    #     alert("Record Updated")
         
        
-    else:
-         alert(" Edit Cancelled")
+    # else:
+    #      alert(" Edit Cancelled")
 
 
     
