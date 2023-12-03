@@ -50,9 +50,10 @@ class RowTemplate1(RowTemplate1Template):
         loggedinuser = anvil.users.get_user()['email']
         anvil.server.call('update_change',  change_copy, loggedinuser )
 
-        
+        open_form('Lists')
         alert("Record Updated")
-        self.set_event_handler('x-refresh', self.refresh)
+        
+       
     else:
          alert(" Edit Cancelled")
 #     save_clicked = alert(buttons=[("Save", True), ("Cancel", False)],

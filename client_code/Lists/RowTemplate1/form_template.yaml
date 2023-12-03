@@ -77,8 +77,10 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''investigator''][0:7] if self.item[''investigator'']
       else '''''}
-- type: DatePicker
+- type: TextBox
   properties: {}
-  name: due_date_picker
-  layout_properties: {column: LCUUMY}
+  name: text_box_3
+  layout_properties: {column: XNVFXY}
+  data_bindings:
+  - {property: text, code: 'self.item[''due_date''].strftime()', writeback: true}
 is_package: true
