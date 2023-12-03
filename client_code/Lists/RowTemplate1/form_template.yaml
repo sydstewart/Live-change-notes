@@ -80,5 +80,5 @@ components:
 - type: DatePicker
   properties: {}
   name: due_date_picker
-  layout_properties: {column: ZIWPGV}
+  layout_properties: {column: LCUUMY}
 is_package: true

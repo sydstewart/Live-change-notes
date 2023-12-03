@@ -95,7 +95,9 @@ def add_change_note(self):
                         loggedinuser =  anvil.users.get_user()['email']
                         print('LoggedinUser=',loggedinuser)
                         anvil.server.call('update_change', result, loggedinuser)
+                        
           else:
                         print(self.validator.are_all_valid())
 
-    pass    
+    pass  
+
