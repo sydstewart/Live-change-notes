@@ -78,9 +78,14 @@ components:
   - {property: text, code: 'self.item[''investigator''][0:7] if self.item[''investigator'']
       else '''''}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_3
   layout_properties: {column: XNVFXY}
   data_bindings:
-  - {property: text, code: 'self.item[''due_date''].strftime()', writeback: true}
+  - {property: text, code: 'self.item[''due_date''].strftime("%d %b %Y") if self.item[''due_date'']
+      is not None else self.item[''due_date'']', writeback: false}
+  event_bindings: {pressed_enter: text_box_3_pressed_enter}
 is_package: true

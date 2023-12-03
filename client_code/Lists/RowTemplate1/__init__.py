@@ -25,11 +25,13 @@ class RowTemplate1(RowTemplate1Template):
           self.text_box_1.foreground = '#f56b6b'
     elif  self.text_box_1.text == '2. Medium Priority':
           self.text_box_1.foreground = 'theme:Secondary 500'
-    if self.due_date_picker.date:
-          print((self.due_date_picker.date.date()))
-          if self.due_date_picker.date.date() < (today): 
-              self.due_date_picker.foreground = '#f56b6b'
-              self.due_date_picker.bold = True
+    if self.text_box_3.text:
+          duedate = datetime.strptime(self.text_box_3.text,"%d %b %Y")
+          print('Due_Date=', duedate)
+          if duedate < datetime.today() : 
+              self.text_box_3.foreground = '#f56b6b'
+              self.text_box_3.bold = True
+               
     # if self.item['pick']:
     #       self.pick_textbox.bold =True
     # Any code you write here will run before the form opens.
@@ -56,42 +58,7 @@ class RowTemplate1(RowTemplate1Template):
        
     else:
          alert(" Edit Cancelled")
-#     save_clicked = alert(buttons=[("Save", True), ("Cancel", False)],
-#       content=Change_note(item=change_copy),
-#       title="Update Change",
-#       large=True
-# #       buttons=[("Save", True), ("Cancel", False)]
-#     )
-#     print('pick in form=',change_copy['pick'])
-#     # Update the article if the user clicks save
-#     if save_clicked:
-#       anvil.server.call('update_change',self.item, change_copy)
-#       print('change_copy=',change_copy)
-#       # Now refresh the page
-#     self.refresh_changes()
-#     pass
-#   def edit_button_click(self, **event_args):
-#     change_copy = dict(list(self.item))
-#     change_copy['pick'] =self.item['pick']
-#     change_copy['priority'] =self.item['priority']
-#     # Open an alert displaying the 'ArticleEdit' Form
-#     # set the `self.item` property of the ArticleEdit Form to a copy of the article to be updated
-#     save_clicked = alert(buttons=[("Save", True), ("Cancel", False)],
-#       content=Change_note_New(item=change_copy),
-#       title="Update Change",
-#       large=True
-# #       buttons=[("Save", True), ("Cancel", False)]
-#     )
-#        # print('pick in form=',change_copy['pick'.])
-#     # Update the article if the user clicks save
-#     if save_clicked:
-#       anvil.server.call('update_change',self.item, change_copy)
-#       print('change_copy=',change_copy)
-#       # Now refresh the page
-#     self.refresh_data_bindings()
-#     """This method is called when the button is clicked"""
-    
-#     pass
+
 
     
 # stage history
@@ -106,9 +73,7 @@ class RowTemplate1(RowTemplate1Template):
     #   anvil.server.call('delete_change_note', self.item)
     #   # self.item['stage'] = 'Archive'
      # self.parent.raise_event('x-refresh-change_notes')
-      
-      
-      
+
     pass
 
   # def text_box_2_pressed_enter(self, **event_args):
@@ -135,6 +100,10 @@ class RowTemplate1(RowTemplate1Template):
   # def text_box_1_pressed_enter(self, **event_args):
   #   """This method is called when the user presses Enter in this text box"""
   #   pass
+
+  def text_box_3_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
 
  
 
