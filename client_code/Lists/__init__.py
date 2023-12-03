@@ -27,11 +27,17 @@ class Lists(ListsTemplate):
     user_type = anvil.users.get_user()['user_type']
     
     result = anvil.server.call('get_datetime')
-    self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('new_change_note_id', ascending = False))
+    self.refresh_changes()
+    # self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('new_change_note_id', ascending = False))
     
     # self.repeating_panel_1.items = app_tables.change_notes.search()
-    self.hits_textbox.text = len(app_tables.change_notes.search())
+    # self.hits_textbox.text = len(app_tables.change_notes.search())
     # functions= list({(r['function']) for r in app_tables.suppported_products.search()})
+
+  def refresh_changes(self):
+    self.repeating_panel_1.items = app_tables.change_notes.search()
+    self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
+    self.hits_textbox.text = len(app_tables.change_notes.search())
 
 #Search Dropdowns =============================================================
     functions = app_tables.functions.search(tables.order_by('function'))
@@ -115,10 +121,7 @@ class Lists(ListsTemplate):
     #     app_tables.change_notes_audit.add_row(**result)
     #     print('audit updated')
         
-  def refresh_changes(self):
-    self.repeating_panel_1.items = app_tables.change_notes.search()
-    self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
-    self.hits_textbox.text = len(app_tables.change_notes.search())
+ 
 
   def stage_search_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
