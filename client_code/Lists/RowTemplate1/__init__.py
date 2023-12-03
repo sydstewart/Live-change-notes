@@ -43,14 +43,14 @@ class RowTemplate1(RowTemplate1Template):
     if change_copy['severity'] and  change_copy['probability'] and change_copy['visibility']:
         self.item['rpn']  =change_copy['severity'] * change_copy['probability'] * change_copy['visibility']
         self.item['priority'] =change_copy['priority']
-    self.refresh_data_bindings() 
+    self.refresh_changes()
     result = alert(content=Change_note(item=change_copy), title="Update Change Note", buttons=[], large=True)
     
     if result:
         loggedinuser = anvil.users.get_user()['email']
         anvil.server.call('update_change',  change_copy, loggedinuser )
 
-        self.refresh_data_bindings()   
+        self.refresh_changes()
         alert("Record Updated")
     else:
          alert(" Edit Cancelled")
@@ -66,7 +66,7 @@ class RowTemplate1(RowTemplate1Template):
 #       anvil.server.call('update_change',self.item, change_copy)
 #       print('change_copy=',change_copy)
 #       # Now refresh the page
-#     self.refresh_data_bindings()
+#     self.refresh_changes()
 #     pass
 #   def edit_button_click(self, **event_args):
 #     change_copy = dict(list(self.item))
@@ -94,6 +94,10 @@ class RowTemplate1(RowTemplate1Template):
     
 # stage history
   
+  def refresh_changes(self):
+    self.repeating_panel_1.items = app_tables.change_notes.search()
+    self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
+    self.hits_textbox.text = len(app_tables.change_notes.search())
     
 
   def delete_change_button_click(self, **event_args):
