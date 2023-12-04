@@ -245,6 +245,7 @@ class Change_note(Change_noteTemplate):
   def top_save_button_click(self, **event_args):
     """This method is called when the button is clicked"""#
     add_change_note(self)
+    self.refresh_data_bindings()
   
 
     

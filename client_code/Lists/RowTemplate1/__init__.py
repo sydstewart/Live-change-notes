@@ -48,7 +48,7 @@ class RowTemplate1(RowTemplate1Template):
         self.item['priority'] =change_copy['priority']
     # open change note form 
     result = alert(content=Change_note(item=change_copy), title="Update Change Note", buttons=[], large=True)
-    open_form('Lists')
+    # open_form('Lists')
  
     
     
