@@ -28,7 +28,7 @@ class RowTemplate1(RowTemplate1Template):
           self.text_box_1.foreground = 'theme:Secondary 500'
     if self.text_box_3.text:
           duedate = datetime.strptime(self.text_box_3.text,"%d %b %Y")
-          print('Due_Date=', duedate)
+          # print('Due_Date=', duedate)
           if duedate < datetime.today() : 
               self.text_box_3.foreground = '#f56b6b'
               self.text_box_3.bold = True
@@ -48,7 +48,7 @@ class RowTemplate1(RowTemplate1Template):
         self.item['priority'] =change_copy['priority']
     # open change note form 
     result = alert(content=Change_note(item=change_copy), title="Update Change Note", buttons=[], large=True)
- 
+    open_form('Lists')
  
     
     
@@ -90,6 +90,11 @@ class RowTemplate1(RowTemplate1Template):
 
   def text_box_3_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
+    pass
+
+  def form_refreshing_data_bindings(self, **event_args):
+    """This method is called when refreshing_data_bindings is called"""
+    self.title.text = self.item['title']
     pass
 
  
