@@ -54,6 +54,7 @@ def add_change_note(self):
                         check = anvil.server.call('change_insert', result)
                         if check:
                           alert(' Change Note added successfully')
+                          self.refresh_data_bindings()
                         else:
                           alert(' Change Note NOT successfully added')
 
@@ -98,6 +99,7 @@ def add_change_note(self):
                         # check = anvil.server.call('change_insert', result)
                         if check:
                           alert(' Change Note edited successfully')
+                          self.refresh_data_bindings()
                         else:
                           alert(' Change Note NOT successfully edited')
                         

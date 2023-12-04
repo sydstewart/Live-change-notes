@@ -46,24 +46,10 @@ class RowTemplate1(RowTemplate1Template):
     if change_copy['severity'] and  change_copy['probability'] and change_copy['visibility']:
         self.item['rpn']  =change_copy['severity'] * change_copy['probability'] * change_copy['visibility']
         self.item['priority'] =change_copy['priority']
-     
+    # open change note form 
     result = alert(content=Change_note(item=change_copy), title="Update Change Note", buttons=[], large=True)
  
-    # if result:
-    #     loggedinuser = anvil.users.get_user()['email']
-    #     # anvil.server.call('update_change',  change_copy, loggedinuser )
-    #     add_change_note(self)
-    #     open_form('Lists')
-    #     alert("Record Updated")
-        
-       
-    # else:
-    #      alert(" Edit Cancelled")
-
-
-    
-# stage history
-  
+ 
     
     
 

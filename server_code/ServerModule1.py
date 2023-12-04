@@ -233,6 +233,8 @@ def update_change( change_copy, loggedinuser):
       change_copy['when_changed'] = datetime.now()
       print('change_copy' ,change_copy)
       app_tables.change_notes_audit.add_row(**change_copy)
+      check = 1
+      return check
   else:
     raise Exception("Change Note does not exist")
     
