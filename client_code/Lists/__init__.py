@@ -35,7 +35,7 @@ class Lists(ListsTemplate):
     # functions= list({(r['function']) for r in app_tables.suppported_products.search()})
 
   def refresh_changes(self):
-    self.repeating_panel_1.items = app_tables.change_notes.search()
+    self.repeating_panel_1.items = app_tables.change_notes.search(change_date = q.greater_than_or_equal_to(datetime(year=2022, month=12, day=15)))
     self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
     self.hits_textbox.text = len(app_tables.change_notes.search())
 
@@ -108,18 +108,10 @@ class Lists(ListsTemplate):
     # Initialise an empty dictionary to store the user inputs
     content = Change_note()
     result = alert(content, buttons=[], title = 'New Change Note', large=True)
-    print(result)
-    self.refresh_changes()
-    # if result:
-    #     print('User=', loggedinuser)
-    #     # change_note_id = (result['product_area'] ) #+ ' ' + result['user']  ) # + str( result['change_date']) + ' '
-    #     app_tables.change_notes.add_row(**result)
-    #     print('changes- updated')
-    #     print('User=', loggedinuser)
-    #     result['user_changed'] = loggedinuser
-    #     result['when_changed'] = datetime.now()
-    #     app_tables.change_notes_audit.add_row(**result)
-    #     print('audit updated')
+    if result:
+       anvil.server.call('change_insert', result)
+       self.refresh_changes()
+    
         
  
 
@@ -423,16 +415,6 @@ class Lists(ListsTemplate):
     pass
 
  
-
-
-
-
-
-
-
-
-
-
 
 
 
