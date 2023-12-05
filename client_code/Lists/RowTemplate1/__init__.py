@@ -59,7 +59,8 @@ class RowTemplate1(RowTemplate1Template):
       anvil.server.call('update_change_1', self.item, change_copy)
       # self.add_change_note()
       self.refresh_data_bindings()
-      # open_form('Lists')
+      open_form('Lists')
+      # self.parent.raise_event('x-refresh')
     # change_copy = dict(list(self.item))
 
     # if change_copy['difficulty'] and change_copy['payoff']:
