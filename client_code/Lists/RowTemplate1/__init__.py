@@ -114,10 +114,10 @@ class RowTemplate1(RowTemplate1Template):
     """This method is called when the user presses Enter in this text box"""
     pass
 
-  def form_refreshing_data_bindings(self, **event_args):
-    """This method is called when refreshing_data_bindings is called"""
-    self.title.text = self.item['title']
-    pass
+  # def form_refreshing_data_bindings(self, **event_args):
+  #   """This method is called when refreshing_data_bindings is called"""
+  #   self.title.text = self.item['title']
+  #   pass
 
  
 

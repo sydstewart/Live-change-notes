@@ -442,7 +442,7 @@ components:
         event_bindings: {click: clear_search_criteria_button_click}
   - type: ColumnPanel
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"RIXTIY":3,"BBFLFO":16,"SPQMVP":20}',
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"RIXTIY":3,"BBFLFO":16}',
       spacing_below: small, background: ''}
     name: column_panel_2
     layout_properties: {grid_position: 'QKUGGT,ANLQHJ', full_width_row: true}
@@ -464,7 +464,7 @@ components:
     - type: Label
       properties: {}
       name: label_9
-      layout_properties: {grid_position: 'ADJCUE,SPQMVP', full_width_row: true}
+      layout_properties: {grid_position: 'ADJCUE,HQEESS', full_width_row: true}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
       foreground: '', allow_indeterminate: false, visible: true, text: sort by new change id,
@@ -531,7 +531,7 @@ components:
         width: '130'}
       - {id: LGQKLC, title: Change Date, data_key: change_date, $$hashKey: 'object:60218',
         width: '110'}
-      - {id: ZIWPGV, title: Title, data_key: title, width: 169, expand: false, $$hashKey: 'object:60219'}
+      - {id: ZIWPGV, title: Title, data_key: title, width: 169, expand: true, $$hashKey: 'object:60219'}
       - {id: LCUUMY, title: Product Area, data_key: product_area, $$hashKey: 'object:60220',
         width: 81, expand: false}
       - {id: NOOEGX, title: Function, data_key: function, $$hashKey: 'object:60221',
