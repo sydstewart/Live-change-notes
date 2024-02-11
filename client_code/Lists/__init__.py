@@ -171,6 +171,7 @@ class Lists(ListsTemplate):
     self.search_creator_dropdown.selected_value = None
     self.search_investigator_dropdown.selected_value = None
     self.priority_search_dropdown.selected_value = None
+    self.text_search_textbox
     # self.no_change_date_chkbox.checkbox = False
     #Initial Search             
     results = app_tables.change_notes.search(tables.order_by('change_date', ascending = False))
@@ -418,16 +419,28 @@ class Lists(ListsTemplate):
     open_form('Load_CSV')
     pass
 
-  def search_title_and_description_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    t = TextBox(placeholder="Enter Search text")
-    alert(content=t,
-      title="Text Search  ")
+  # def search_title_and_description_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   t = TextBox(placeholder="Enter Search text")
+  #   alert(content=t,
+  #     title="Text Search  ")
 
-    results = anvil.server.call('text_search_changes', t.text)
-    self.repeating_panel_1.items = results
-    self.hits_textbox.text  = len(results)
+  #   results = anvil.server.call('text_search_changes', t.text)
+  #   self.repeating_panel_1.items = results
+  #   self.hits_textbox.text  = len(results)
 
+  #   pass
+
+  def text_search_textbox_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    # t = TextBox(placeholder="Enter Search text")
+    if self.text_search_textbox.text:
+        # alert(content=t,
+        #   title="Text Search  ")
+    
+        results = anvil.server.call('text_search_changes', self.text_search_textbox.text)
+        self.repeating_panel_1.items = results
+        self.hits_textbox.text  = len(results)
     pass
 
 
