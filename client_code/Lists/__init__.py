@@ -7,6 +7,7 @@ import anvil.tables.query as q
 import anvil.tz
 from anvil.tables import app_tables
 from datetime import datetime, time , date , timedelta
+
 from ..selection import selection
 from ..Change_note import Change_note
 from ..Searches.using_kwargs import search_using_kwargs
@@ -19,42 +20,46 @@ class Lists(ListsTemplate):
 
     # Login
     anvil.users.login_with_form()
+  
+    #get logged in user
     global loggedinuser
     loggedinuser =  anvil.users.get_user()['email']
-#     self.loggedinuser.text = loggedinuser
+ 
     print('User=',loggedinuser)
-    
+
+    # user type admin or other
     user_type = anvil.users.get_user()['user_type']
-    
+   
+    # get date and time now
     result = anvil.server.call('get_datetime')
     self.refresh_changes()
-    # self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('new_change_note_id', ascending = False))
-    
-    # self.repeating_panel_1.items = app_tables.change_notes.search()
-    # self.hits_textbox.text = len(app_tables.change_notes.search())
-    # functions= list({(r['function']) for r in app_tables.suppported_products.search()})
 
+   # refresh and display grid of changes
   def refresh_changes(self):
     self.repeating_panel_1.items = app_tables.change_notes.search(change_date = q.greater_than_or_equal_to(datetime(year=2022, month=12, day=15)))
     self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
     self.hits_textbox.text = len(app_tables.change_notes.search())
 
 #Search Dropdowns =============================================================
+    # functions
     functions = app_tables.functions.search(tables.order_by('function'))
     functionlist =[]
     for row in functions:
        functionlist.append(row['function'])
     self.search_function_drop_down.items = functionlist
-   
+
+     #users
     users = app_tables.users.search(tables.order_by('email'))
     userlist =[]
     for row in users:
       userlist.append(row['email'])
     self.search_creator_dropdown.items = userlist
     self.search_investigator_dropdown.items = userlist
-# priority
+    
+    # priority
     priority =list({(r['priority']) for r in app_tables.change_notes.search(tables.order_by('priority'))})
     self.priority_search_dropdown.items = priority 
+
 # Searches =======================================================================
 #stage change     
     def stage_search_dropdown_change(self, **event_args): 
@@ -68,23 +73,7 @@ class Lists(ListsTemplate):
 #Class
     def search_class_drop_down_change(self, **event_args):
       search_using_kwargs(self)
-
-       
-      
-# Loading data from Excel ==========================================================
-
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Load_CSV')
-    pass
-
-  def button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Lists')
-    pass
-  
-
-
+  # stage
   def stage_multi_select_drop_down_change(self, **event_args):
     """This method is called when the selected values change"""
     selectedstage = self.multi_select_drop_down_1.selected
@@ -255,7 +244,7 @@ class Lists(ListsTemplate):
     else:
           self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['priority']), reverse=True )
     pass
-
+    
   def change_note_date_search_chkbox_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
     if self.change_note_date_search_chkbox.checked == True:
@@ -280,29 +269,21 @@ class Lists(ListsTemplate):
     else:
               self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['new_change_note_id']), reverse=False ) 
 
-  
-  
-  
-  
-  
-  
+# Searches  ================================================================================  
+  def over_due_chkbox_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    search_using_kwargs(self)
+    pass
+
+  def priority_search_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    search_using_kwargs(self)
+    pass 
+
   def  id_search_textbox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     search_using_kwargs(self)
     pass
-
-  def search_title_and_description_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    t = TextBox(placeholder="Enter Search text")
-    alert(content=t,
-      title="Text Search  ")
- 
-    results = anvil.server.call('text_search_changes', t.text)
-    self.repeating_panel_1.items = results
-    self.hits_textbox.text  = len(results)
-
-    pass
-
 
   def start_date_picker_change(self, **event_args):
     """This method is called when the selected date changes"""
@@ -330,29 +311,10 @@ class Lists(ListsTemplate):
     """This method is called when this checkbox is checked or unchecked"""
     search_using_kwargs(self)
     pass
-
-  def button_3_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    fix_due_date()
-    pass
-
-  def populate_blank_fields_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    t = app_tables.change_notes.search()
-    count = 0
-    count1 = 0
-    for row in t:
-      if row['priority'] == None:
-        row['priority'] = '4. Not Defined'
-        count =count +1
-        print('count=',count)
-    alert(' Priority changed to 4. Not Defined=', count)
-    if row['priority'] == 'High Priority':
-          t['priority'] = '1. High Priority'
-          count1 =count1 +1
-    alert(' Priority changed to 1. High Priority=', count1)
-    pass
-
+    
+   
+# add a new function on the there and then =======================================
+  
   def add_functions_click(self, **event_args):
     """This method is called when the button is clicked"""
     app_tables.functions.delete_all_rows()
@@ -365,21 +327,8 @@ class Lists(ListsTemplate):
          app_tables.functions.add_row(function = i)
     pass
 
-  def over_due_chkbox_change(self, **event_args):
-    """This method is called when this checkbox is checked or unchecked"""
-    search_using_kwargs(self)
-    pass
-
-  def priority_search_dropdown_change(self, **event_args):
-    """This method is called when an item is selected"""
-    search_using_kwargs(self)
-    pass
-
-  def restore_table_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Load_CSV')
-    pass
-
+# LOGOUT ===================================================
+  # logout
   def log_out_click(self, **event_args):
     """This method is called when the button is clicked"""
     # self.content_panel_1.clear()
@@ -389,8 +338,49 @@ class Lists(ListsTemplate):
     
     anvil.users.login_with_form()
     open_form('Lists')
+    pass    
+
+# SIDE PANEL Left
+
+
+    # Add New Change
+   
+    # search title and description
+    def search_title_and_description_click (self, **event_args):
+        """This method is called when the button is clicked"""
+        t = TextBox(placeholder="Enter Search text")
+        alert(content=t,
+          title="Text Search  ")
+    
+        results = anvil.server.call('text_search_changes', t.text)
+        self.repeating_panel_1.items = results
+        self.hits_textbox.text  = len(results)
+    
+        pass
+
+
+# NOT IN USE ==========================================================
+
+
+
+    def populate_blank_fields_click(self, **event_args):
+      """This method is called when the button is clicked"""
+      t = app_tables.change_notes.search()
+      count = 0
+      count1 = 0
+      for row in t:
+        if row['priority'] == None:
+          row['priority'] = '4. Not Defined'
+          count =count +1
+          print('count=',count)
+      alert(' Priority changed to 4. Not Defined=', count)
+      if row['priority'] == 'High Priority':
+            t['priority'] = '1. High Priority'
+            count1 =count1 +1
+      alert(' Priority changed to 1. High Priority=', count1)
     pass
 
+  # sort change notes by due date  NOT IN USE
   def due_date_sort_chkbox_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
     if self.due_date_sort_chkbox.checked == True:
@@ -407,14 +397,39 @@ class Lists(ListsTemplate):
           self.repeating_panel_1.items = app_tables.change_notes.search(tables.order_by('due_date', ascending = True), \
                                                                         type ='Safety', classid = 'Defect', \
                                                                         stage = q.none_of('Released', 'Reviewed', 'Rejected'))
-    
-    
-    
-  
-    
     pass
 
- 
+  
+   # NOT IN USE Loading data from Excel 
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Load_CSV')
+    pass
+    
+  # NOT IN USE
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Lists')
+    pass
+    
+  # NOT IN USE
+  def restore_table_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Load_CSV')
+    pass
+
+  def search_title_and_description_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    t = TextBox(placeholder="Enter Search text")
+    alert(content=t,
+      title="Text Search  ")
+
+    results = anvil.server.call('text_search_changes', t.text)
+    self.repeating_panel_1.items = results
+    self.hits_textbox.text  = len(results)
+
+    pass
+
 
 
 

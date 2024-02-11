@@ -17,6 +17,7 @@ from datetime import datetime, time , date , timedelta
 # from ..set_pick import set_pick
 # from ..save_routine import save_routine
 # from form_checker import validation
+
 def add_change_note(self):
     if not self.text_box_1.text:  # Change Note ID
           if self.validator.are_all_valid():
