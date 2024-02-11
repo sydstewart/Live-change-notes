@@ -59,6 +59,16 @@ class Lists(ListsTemplate):
     # priority
     priority =list({(r['priority']) for r in app_tables.change_notes.search(tables.order_by('priority'))})
     self.priority_search_dropdown.items = priority 
+    
+# Add NEW Change Note =================================================================
+  def add_change_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    # Initialise an empty dictionary to store the user inputs
+    content = Change_note()
+    result = alert(content, buttons=[], title = 'New Change Note', large=True)
+    if result:
+       anvil.server.call('change_insert', result)
+       self.refresh_changes()
 
 # Searches =======================================================================
 #stage change     
@@ -73,37 +83,8 @@ class Lists(ListsTemplate):
 #Class
     def search_class_drop_down_change(self, **event_args):
       search_using_kwargs(self)
-  # stage
-  def stage_multi_select_drop_down_change(self, **event_args):
-    """This method is called when the selected values change"""
-    selectedstage = self.multi_select_drop_down_1.selected
-    selection(self)
-
-
-  def multi_select_drop_down_3_change(self, **event_args):
-    """This method is called when the selected values change"""
-    pass
-
-  def classs_multi_select_drop_down_change(self, **event_args):
-    """This method is called when the selected values change"""
-    selectedclassid = self.classid_multi_select_drop_down.selected
-    selection(self)
-    pass
-
-
-
-  def add_change_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    # Initialise an empty dictionary to store the user inputs
-    content = Change_note()
-    result = alert(content, buttons=[], title = 'New Change Note', large=True)
-    if result:
-       anvil.server.call('change_insert', result)
-       self.refresh_changes()
-    
-        
- 
-
+      
+  # stage 
   def stage_search_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
@@ -132,12 +113,6 @@ class Lists(ListsTemplate):
   def find_dups_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.task = anvil.server.call('find_dups_back')
-
-
-  def delete_change(self, change_note, **event_args):
-    # Delete the article
-    anvil.server.call('delete_change', change_note)
-
 
   def refresh_change_notes(self, **event_args):
     self.stage_search_dropdown.selected_value = None
@@ -171,7 +146,7 @@ class Lists(ListsTemplate):
     self.search_creator_dropdown.selected_value = None
     self.search_investigator_dropdown.selected_value = None
     self.priority_search_dropdown.selected_value = None
-    self.text_search_textbox
+    self.text_search_textbox.text = None
     # self.no_change_date_chkbox.checkbox = False
     #Initial Search             
     results = app_tables.change_notes.search(tables.order_by('change_date', ascending = False))
@@ -341,28 +316,11 @@ class Lists(ListsTemplate):
     open_form('Lists')
     pass    
 
-# SIDE PANEL Left
 
 
-    # Add New Change
-   
-    # search title and description
-    def search_title_and_description_click (self, **event_args):
-        """This method is called when the button is clicked"""
-        t = TextBox(placeholder="Enter Search text")
-        alert(content=t,
-          title="Text Search  ")
-    
-        results = anvil.server.call('text_search_changes', t.text)
-        self.repeating_panel_1.items = results
-        self.hits_textbox.text  = len(results)
-    
-        pass
-
-
-# NOT IN USE ==========================================================
-
-
+  #==========================================================================
+  # Below functions NOT IN USE
+  #==========================================================================
 
     def populate_blank_fields_click(self, **event_args):
       """This method is called when the button is clicked"""
@@ -406,14 +364,17 @@ class Lists(ListsTemplate):
     """This method is called when the button is clicked"""
     open_form('Load_CSV')
     pass
-    
-  # NOT IN USE
+
+
+
+  
+
+  
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('Lists')
     pass
-    
-  # NOT IN USE
+  
   def restore_table_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('Load_CSV')
@@ -442,6 +403,26 @@ class Lists(ListsTemplate):
         self.repeating_panel_1.items = results
         self.hits_textbox.text  = len(results)
     pass
+
+  def multi_select_drop_down_3_change(self, **event_args):
+    """This method is called when the selected values change"""
+    pass
+
+  def classs_multi_select_drop_down_change(self, **event_args):
+    """This method is called when the selected values change"""
+    selectedclassid = self.classid_multi_select_drop_down.selected
+    selection(self)
+    pass
+  
+  def delete_change(self, change_note, **event_args):
+    # Delete the article
+    anvil.server.call('delete_change', change_note)
+
+  def stage_multi_select_drop_down_change(self, **event_args):
+    """This method is called when the selected values change"""
+    selectedstage = self.multi_select_drop_down_1.selected
+    selection(self)
+
 
 
 

@@ -36,19 +36,19 @@ components:
       - {id: ONYHGE, title: New Change Note ID, data_key: column_3, $$hashKey: 'object:12313',
         width: 92, expand: false}
       - {id: SRZHNO, title: Change Date, data_key: change_date, $$hashKey: 'object:26977',
-        width: '117', expand: false}
+        width: 99.18182373046875, expand: false}
       - {id: OGMRXV, title: User, data_key: user_changed, $$hashKey: 'object:1084085',
         width: 134, expand: false}
       - {id: FLIACQ, title: When, data_key: when_changed, $$hashKey: 'object:1084087',
         width: 117, expand: false}
       - {id: UKYJLH, title: Stage, data_key: stage, $$hashKey: 'object:3856', width: 77,
         expand: false}
-      - {id: OBNGRZ, title: Title, data_key: title, $$hashKey: 'object:1084083', width: 107,
+      - {id: OBNGRZ, title: Title, data_key: title, $$hashKey: 'object:1084083', width: 101.3636474609375,
         expand: false}
       - {id: KBKCYN, title: Description, data_key: description, $$hashKey: 'object:1083995',
-        width: '300'}
+        width: 159.45458984375, expand: false}
       - {id: NQMFYS, title: Reported By, data_key: reported_by_customer, $$hashKey: 'object:193039',
-        width: '100'}
+        width: 89.8182373046875, expand: false}
       - {id: OIZESR, title: Found in, data_key: found_in_version_no, $$hashKey: 'object:193041',
         width: '70'}
       - {id: RAOCAL, title: Product Area, data_key: product_area, $$hashKey: 'object:537376',
@@ -62,20 +62,22 @@ components:
       - {id: TRCTVS, title: Ease, data_key: difficulty, $$hashKey: 'object:474891',
         width: '50'}
       - {id: RQTZZN, title: Payoff, data_key: payoff, $$hashKey: 'object:474893',
-        width: 96, expand: false}
+        width: 57.727294921875, expand: false}
       - {id: LSSUZH, title: IPS, data_key: ips, $$hashKey: 'object:474975', width: 42,
         expand: false}
-      - {id: GTZSXC, title: PICK, data_key: pick, $$hashKey: 'object:815', width: '100'}
-      - {id: GJJTNB, title: Due Date, data_key: column_2, $$hashKey: 'object:17294'}
+      - {id: GTZSXC, title: PICK, data_key: pick, $$hashKey: 'object:815', width: 88.00003051757812,
+        expand: false}
+      - {id: GJJTNB, title: Due Date, data_key: column_2, $$hashKey: 'object:17294',
+        width: 75, expand: false}
       - {id: VORFEE, title: See More of Audit Record, data_key: column_1, $$hashKey: 'object:2302',
-        width: '80'}
+        width: 72.8182373046875, expand: false}
       auto_header: true
       tooltip: ''
       border: ''
       foreground: ''
       rows_per_page: 20
       visible: true
-      wrap_on: never
+      wrap_on: mobile
       show_page_controls: true
       spacing_above: small
       spacing_below: small
