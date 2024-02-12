@@ -36,7 +36,7 @@ class Lists(ListsTemplate):
 
    # refresh and display grid of changes
   def refresh_changes(self):
-    self.repeating_panel_1.items = app_tables.change_notes.search(change_date = q.greater_than_or_equal_to(datetime(year=2022, month=12, day=15)))
+    self.repeating_panel_1.items = app_tables.change_notes.search(change_date = q.greater_than_or_equal_to(datetime(year=2018, month=12, day=15)))
     self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: x['new_change_note_id'], reverse=True )
     self.hits_textbox.text = len(app_tables.change_notes.search())
 
