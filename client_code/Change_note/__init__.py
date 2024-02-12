@@ -6,12 +6,17 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from datetime import datetime, time , date , timedelta
-from ..pick_calc import set_pick
-from Validator.validator import Validator
-from ..set_priority import set_priority
-from ..set_pick import set_pick
-from ..save_routine import save_routine
+
+
+
 # from form_checker import validation
+from Validator.validator import Validator
+
+
+from ..set_priority import set_priority
+from ..set_pick import set_pick 
+#from ..pick_calc import set_pick  duplicate
+from ..save_routine import save_routine
 from ..Add_changes.add_change_note import add_change_note
 
 
@@ -345,6 +350,10 @@ class Change_note(Change_noteTemplate):
 
   def due_date_change(self, **event_args):
     """This method is called when the selected date changes"""
+    pass
+
+  def tyype_drop_down_change(self, **event_args):
+    """This method is called when an item is selected"""
     pass
 
   

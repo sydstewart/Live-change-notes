@@ -492,11 +492,6 @@ db_schema:
     - name: appareas
       admin_ui: {width: 200}
       type: string
-  table_9:
-    title: Table 9
-    client: none
-    server: full
-    columns: []
   change_id_counter:
     title: change_id_counter
     client: none

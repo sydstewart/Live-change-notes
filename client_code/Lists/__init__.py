@@ -80,7 +80,7 @@ class Lists(ListsTemplate):
     def search_type_drop_down_change(self, **event_args):
       search_using_kwargs(self)
 
-#Class
+  #Class
     def search_class_drop_down_change(self, **event_args):
       search_using_kwargs(self)
       
@@ -110,9 +110,7 @@ class Lists(ListsTemplate):
     search_using_kwargs(self)
     pass
 
-  def find_dups_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.task = anvil.server.call('find_dups_back')
+
 
   def refresh_change_notes(self, **event_args):
     self.stage_search_dropdown.selected_value = None
@@ -161,7 +159,8 @@ class Lists(ListsTemplate):
     self.start_date_picker.date = None
     self.end_date_picker.date =None
     search_using_kwargs(self)
-
+    
+  # in right side panel
   def submitted_in_last_90_days_tmn_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.stage_search_dropdown.selected_value = 'Submitted'
@@ -422,8 +421,10 @@ class Lists(ListsTemplate):
     """This method is called when the selected values change"""
     selectedstage = self.multi_select_drop_down_1.selected
     selection(self)
-
-
+    
+  def find_dups_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.task = anvil.server.call('find_dups_back')
 
 
 

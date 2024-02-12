@@ -294,6 +294,7 @@ components:
     layout_properties: {grid_position: 'AEHXEN,QNDKDY RCUWSA,UBAPPU'}
     data_bindings:
     - {property: selected_value, code: 'self.item[''type'']', writeback: true}
+    event_bindings: {change: tyype_drop_down_change}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '#df2a2a',
       visible: true, text: Select Safety /Operational, font_size: null, font: '',
