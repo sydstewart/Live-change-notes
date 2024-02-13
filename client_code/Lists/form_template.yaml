@@ -441,12 +441,13 @@ components:
     name: label_1
     layout_properties: {grid_position: 'KLCQAH,MOUHVC', full_width_row: true}
   - type: TextBox
-    properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    properties: {role: textborder, align: center, hide_text: false, tooltip: '', placeholder: '',
+      border: ' ', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: none, italic: false,
       background: '#fbdfdf', bold: true, underline: false}
     name: hits_textbox
     layout_properties: {grid_position: 'KLCQAH,UWTXDS'}
+    data_bindings: []
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
       foreground: '', allow_indeterminate: false, visible: true, text: sort by new change id,

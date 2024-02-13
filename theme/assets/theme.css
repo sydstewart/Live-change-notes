@@ -156,7 +156,10 @@ a:hover, a:active {
   padding-top: 0;
   padding-bottom: 0;
 }
-
+.anvil-role-textborder {
+    border: 5px solid red;
+}
+  
 /* Page structure: App bar with optional left nav */
 .structure {
   display: flex;

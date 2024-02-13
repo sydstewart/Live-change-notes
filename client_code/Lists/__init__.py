@@ -33,7 +33,7 @@ class Lists(ListsTemplate):
     # get date and time now
     result = anvil.server.call('get_datetime')
     self.refresh_changes()
-
+    self.hits_textbox.role = "textborder"
    # refresh and display grid of changes
   def refresh_changes(self):
     self.repeating_panel_1.items = app_tables.change_notes.search(change_date = q.greater_than_or_equal_to(datetime(year=2018, month=12, day=15)))
