@@ -71,30 +71,18 @@ class Lists(ListsTemplate):
        self.refresh_changes()
 
 # Searches =======================================================================
-#stage change     
-    def stage_search_dropdown_change(self, **event_args): 
-      """This method is called when an item is selected"""
-      search_using_kwargs(self)
-#Type
-    
-    def search_type_drop_down_change(self, **event_args):
-      search_using_kwargs(self)
-
-  #Class
-    def search_class_drop_down_change(self, **event_args):
-      search_using_kwargs(self)
-      
-  # stage 
+  #stage change (Submitted, etc)
   def stage_search_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
     pass
-
+ 
+  # Search Type
   def search_type_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
     pass
-
+ 
   def search_class_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
@@ -144,7 +132,7 @@ class Lists(ListsTemplate):
     self.search_creator_dropdown.selected_value = None
     self.search_investigator_dropdown.selected_value = None
     self.priority_search_dropdown.selected_value = None
-    self.text_search_textbox.text = None
+    
     # self.no_change_date_chkbox.checkbox = False
     #Initial Search             
     results = app_tables.change_notes.search(tables.order_by('change_date', ascending = False))
@@ -379,17 +367,17 @@ class Lists(ListsTemplate):
     open_form('Load_CSV')
     pass
 
-  # def search_title_and_description_click(self, **event_args):
-  #   """This method is called when the button is clicked"""
-  #   t = TextBox(placeholder="Enter Search text")
-  #   alert(content=t,
-  #     title="Text Search  ")
+  def search_title_and_description_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    t = TextBox(placeholder="Enter Search text")
+    alert(content=t,
+      title="Text Search  ")
 
-  #   results = anvil.server.call('text_search_changes', t.text)
-  #   self.repeating_panel_1.items = results
-  #   self.hits_textbox.text  = len(results)
+    results = anvil.server.call('text_search_changes', t.text)
+    self.repeating_panel_1.items = results
+    self.hits_textbox.text  = len(results)
 
-  #   pass
+    pass
 
   def text_search_textbox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
@@ -425,6 +413,15 @@ class Lists(ListsTemplate):
   def find_dups_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.task = anvil.server.call('find_dups_back')
+
+
+ 
+
+
+
+ 
+   
+
 
 
 

@@ -82,7 +82,7 @@ components:
     event_bindings: {click: button_1_click}
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"MOUHVC":10,"UWTXDS":4,"SHTHIU":7,"YKVZZO":7,"TJYUAQ":7,"JCDVOM":7,"UAXMBN":6,"THUJKP":6,"YGVJCV":6}',
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"MOUHVC":10,"UWTXDS":4,"SHTHIU":7,"YKVZZO":7,"TJYUAQ":7,"JCDVOM":7,"UAXMBN":6,"THUJKP":7,"XMNKJX":10,"QUDZGA":2}',
     spacing_below: small, background: ''}
   name: column_panel_1
   layout_properties: {grid_position: 'TIHQAP,USYHIF', full_width_row: true, slot: default}
@@ -95,15 +95,16 @@ components:
     layout_properties: {grid_position: 'WOHPCZ,GTOZSS', full_width_row: true}
     components:
     - type: ColumnPanel
-      properties: {col_widths: '{"QMCDFR":2,"RPZGPK":3,"QXTBJR":4,"FQXRVI":4,"MDFHVI":6,"CJKLMN":5,"BXRYEI":5,"AXETKK":5,"YBHHIF":10,"LHADXX":5,"TNYBIN":2,"ZIKZGY":8,"GDUDHR":8,"FRFTJW":2,"IXNVJM":2,"IRGJPW":3,"DBDYRZ":6,"RGOZCH":5,"HYYWDP":2,"MFYDET":6,"MFERCC":6,"OAMWKC":6,"WCKEUB":5,"ETIFJB":2,"TZDFYJ":3,"MIJCIT":15,"TJINLV":33,"EQKNZH":20}'}
+      properties: {col_widths: '{"QMCDFR":2,"RPZGPK":3,"QXTBJR":4,"FQXRVI":4,"MDFHVI":6,"CJKLMN":5,"BXRYEI":5,"AXETKK":5,"YBHHIF":10,"LHADXX":5,"TNYBIN":2,"ZIKZGY":8,"GDUDHR":8,"FRFTJW":2,"IXNVJM":2,"IRGJPW":3,"DBDYRZ":3,"RGOZCH":5,"HYYWDP":2,"MFYDET":6,"MFERCC":6,"OAMWKC":6,"WCKEUB":5,"ETIFJB":2,"TZDFYJ":6}',
+        background: '#fbdfdf'}
       name: content_panel
       layout_properties: {grid_position: 'GTKXFN,ZYMQWD', full_width_row: true}
       components:
       - type: Label
         properties: {role: text, align: left, tooltip: '', border: '', foreground: '',
           visible: true, text: ENTER SEARCH CRITERIA, font_size: 14, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-          underline: false, icon: ''}
+          icon_align: left, spacing_below: small, italic: false, background: '#fbdfdf',
+          bold: true, underline: false, icon: ''}
         name: label_2
         layout_properties: {grid_position: 'IGSAKK,KRDYPZ', full_width_row: true}
       - type: Label
@@ -432,36 +433,18 @@ components:
         name: end_date_picker
         layout_properties: {grid_position: 'SZRHGJ,GDUDHR', full_width_row: true}
         event_bindings: {change: end_date_picker_change}
-      - name: Title_or_Description
-        properties: {text: Title or Description Text Search (then Hit Enter), bold: true,
-          align: center}
-        type: Label
-        layout_properties: {grid_position: 'LQYGSY,MIJCIT', full_width_row: true}
-      - name: text_search_textbox
-        properties: {placeholder: Enter text}
-        type: TextBox
-        layout_properties: {grid_position: 'LQYGSY,TJINLV'}
-        event_bindings: {pressed_enter: text_search_textbox_pressed_enter}
-      - type: Button
-        properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-          foreground: '', visible: true, text: Clear Search Criteria, font_size: null,
-          font: '', spacing_above: small, icon_align: left, spacing_below: small,
-          italic: false, background: '', bold: true, underline: false, icon: ''}
-        name: clear_search_criteria_button
-        layout_properties: {grid_position: 'LQYGSY,EQKNZH'}
-        event_bindings: {click: clear_search_criteria_button_click}
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Number of Changes Notes Found, font_size: null, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: 'theme:Gray 300', bold: true, underline: false, icon: ''}
+      background: '#fbdfdf', bold: true, underline: false, icon: ''}
     name: label_1
-    layout_properties: {grid_position: 'KLCQAH,MOUHVC', full_width_row: false}
+    layout_properties: {grid_position: 'KLCQAH,MOUHVC', full_width_row: true}
   - type: TextBox
     properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: 'theme:Gray 300', bold: true, underline: false}
+      background: '#fbdfdf', bold: true, underline: false}
     name: hits_textbox
     layout_properties: {grid_position: 'KLCQAH,UWTXDS'}
   - type: CheckBox
@@ -470,7 +453,7 @@ components:
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: sort_by_new_change_id_checkbox
-    layout_properties: {grid_position: 'KLCQAH,SHTHIU'}
+    layout_properties: {grid_position: 'KLCQAH,SHTHIU', full_width_row: true}
     event_bindings: {change: sort_by_new_change_id_checkbox_change}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
@@ -478,7 +461,7 @@ components:
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: change_note_date_search_chkbox
-    layout_properties: {grid_position: 'KLCQAH,YKVZZO'}
+    layout_properties: {grid_position: 'KLCQAH,YKVZZO', full_width_row: true}
     event_bindings: {change: change_note_date_search_chkbox_change}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
@@ -486,7 +469,7 @@ components:
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: ips_check_box
-    layout_properties: {grid_position: 'KLCQAH,TJYUAQ'}
+    layout_properties: {grid_position: 'KLCQAH,TJYUAQ', full_width_row: true}
     event_bindings: {change: ips_check_box_change}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
@@ -494,7 +477,7 @@ components:
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: priority_sort_checkbox
-    layout_properties: {grid_position: 'KLCQAH,JCDVOM'}
+    layout_properties: {grid_position: 'KLCQAH,JCDVOM', full_width_row: true}
     event_bindings: {change: priority_sort_checkbox_change}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
@@ -502,7 +485,7 @@ components:
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: pick_sort_chkbox
-    layout_properties: {grid_position: 'KLCQAH,UAXMBN'}
+    layout_properties: {grid_position: 'KLCQAH,UAXMBN', full_width_row: true}
     event_bindings: {change: pick_sort_chkbox_change}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
@@ -510,15 +493,23 @@ components:
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: RPN_sort_checkbox
-    layout_properties: {grid_position: 'KLCQAH,THUJKP'}
+    layout_properties: {grid_position: 'KLCQAH,THUJKP', full_width_row: true}
     event_bindings: {change: RPN_sort_checkbox_change}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Clear Search Criteria, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: clear_search_criteria_button
+    layout_properties: {grid_position: 'KLCQAH,XMNKJX', full_width_row: true}
+    event_bindings: {click: clear_search_criteria_button_click}
   - type: CheckBox
     properties: {role: null, align: left, tooltip: '', border: '', enabled: false,
       foreground: '', allow_indeterminate: false, visible: false, text: sort by Due Date,
       font_size: 12, font: '', spacing_above: small, spacing_below: small, italic: false,
       background: '', bold: true, checked: false, underline: false}
     name: due_date_sort_chkbox
-    layout_properties: {grid_position: 'KLCQAH,YGVJCV', full_width_row: true}
+    layout_properties: {grid_position: 'KLCQAH,QUDZGA', full_width_row: true}
     event_bindings: {change: due_date_sort_chkbox_change}
   - type: DataGrid
     properties:
@@ -585,8 +576,8 @@ components:
   layout_properties: {grid_position: 'WKAPQZ,KBYBQU', slot: default}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Change Notes v1.08a, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+    text: Change Notes v1.08a    DEVELOPMENT, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
   name: label_18
   layout_properties: {slot: title}

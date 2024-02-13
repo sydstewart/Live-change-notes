@@ -29,6 +29,7 @@ def search_using_kwargs(self):
     search11 = self.over_due_chkbox.checked
     search12 = self.priority_search_dropdown.selected_value
     search14 = self.search_investigator_dropdown.selected_value
+    # search15 = self.text_search_textbox.text
  #============================================================================================================
 #search6 defined
     if self.date_search_dropdown.selected_value ==  'This week':
@@ -224,10 +225,14 @@ def search_using_kwargs(self):
 # Priority     
     if search12:
           kwargs['priority'] = search12
+
+    # if search15: #r['title'].lower() or query in r['description'].lower()]
+    #   kwargs['title'] = search15
+       
 # Search using kwargs      
     print('kwargs=',kwargs)
     results= app_tables.change_notes.search(tables.order_by('change_date', ascending = False),**kwargs)
-    # results = app_tables.change_notes.search(**kwargs)
+    # results = app_tables.change_notes.search(q.any_of(**kwargs)) 
     print('results', results)
     self.repeating_panel_1.items = results
     self.hits_textbox.text  = len(results)
