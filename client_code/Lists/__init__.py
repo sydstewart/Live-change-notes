@@ -59,6 +59,14 @@ class Lists(ListsTemplate):
     # priority
     priority =list({(r['priority']) for r in app_tables.change_notes.search(tables.order_by('priority'))})
     self.priority_search_dropdown.items = priority 
+  
+  # date search e.g  Last 90 Days, Today, etc
+  def date_search_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    self.start_date_picker.date = None
+    self.end_date_picker.date =None
+    search_using_kwargs(self)
+    
     
 # Add NEW Change Note =================================================================
   def add_change_button_click(self, **event_args):
@@ -74,20 +82,22 @@ class Lists(ListsTemplate):
   #stage change (Submitted, etc)
   def stage_search_dropdown_change(self, **event_args):
     """This method is called when an item is selected"""
+    # results = anvil.server.call('search_using_kwargs', self)
     search_using_kwargs(self)
     pass
  
-  # Search Type
+  # Search Type ( Safety Operational)
   def search_type_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
     pass
- 
+    
+  # Search Class ( Defect Improvement)
   def search_class_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
     pass
-
+  # Functions
   def search_function_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     search_using_kwargs(self)
@@ -98,8 +108,50 @@ class Lists(ListsTemplate):
     search_using_kwargs(self)
     pass
 
+# Searches  ================================================================================  
+  def over_due_chkbox_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    search_using_kwargs(self)
+    pass
 
+  def priority_search_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    search_using_kwargs(self)
+    pass 
 
+  def  id_search_textbox_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    search_using_kwargs(self)
+    pass
+
+  def start_date_picker_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    self.date_search_dropdown.selected_value = None
+    search_using_kwargs(self)
+    pass
+
+  def end_date_picker_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    self.date_search_dropdown.selected_value = None
+    search_using_kwargs(self)
+    pass
+
+  def search_creator_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    search_using_kwargs(self)
+    pass
+    
+  def search_investigator_dropdown_change(self, **event_args):
+    """This method is called when an item is selected"""
+    search_using_kwargs(self)
+    pass
+
+  def no_change_date_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    search_using_kwargs(self)
+    pass
+    
+#Refreash Change Notes
   def refresh_change_notes(self, **event_args):
     self.stage_search_dropdown.selected_value = None
     self.search_type_drop_down.selected_value = None
@@ -142,19 +194,25 @@ class Lists(ListsTemplate):
     self.hits_textbox.text = len(results)
     pass
 
-  def date_search_dropdown_change(self, **event_args):
-    """This method is called when an item is selected"""
-    self.start_date_picker.date = None
-    self.end_date_picker.date =None
-    search_using_kwargs(self)
-    
-  # in right side panel
+
+# in right side panel burger icon =========================================================
+ 
   def submitted_in_last_90_days_tmn_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.stage_search_dropdown.selected_value = 'Submitted'
     self.date_search_dropdown.selected_value = 'Last 90 Days'
     self.stage_search_dropdown.selected_value != 'Released'
     search_using_kwargs(self)
+    pass
+
+  def search_title_and_description_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    t = TextBox(placeholder="Enter Search text")
+    alert(content=t,
+      title="Text Search  ")
+    results = anvil.server.call('text_search_changes', t.text)
+    self.repeating_panel_1.items = results
+    self.hits_textbox.text  = len(results)
     pass
 
     
@@ -232,49 +290,7 @@ class Lists(ListsTemplate):
     else:
               self.repeating_panel_1.items = sorted([r for r in self.repeating_panel_1.items], key = lambda x: (x['new_change_note_id']), reverse=False ) 
 
-# Searches  ================================================================================  
-  def over_due_chkbox_change(self, **event_args):
-    """This method is called when this checkbox is checked or unchecked"""
-    search_using_kwargs(self)
-    pass
 
-  def priority_search_dropdown_change(self, **event_args):
-    """This method is called when an item is selected"""
-    search_using_kwargs(self)
-    pass 
-
-  def  id_search_textbox_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    search_using_kwargs(self)
-    pass
-
-  def start_date_picker_change(self, **event_args):
-    """This method is called when the selected date changes"""
-    self.date_search_dropdown.selected_value = None
-    search_using_kwargs(self)
-    pass
-
-  def end_date_picker_change(self, **event_args):
-    """This method is called when the selected date changes"""
-    self.date_search_dropdown.selected_value = None
-    search_using_kwargs(self)
-    pass
-
-  def search_creator_dropdown_change(self, **event_args):
-    """This method is called when an item is selected"""
-    search_using_kwargs(self)
-    pass
-    
-  def search_investigator_dropdown_change(self, **event_args):
-    """This method is called when an item is selected"""
-    search_using_kwargs(self)
-    pass
-
-  def no_change_date_change(self, **event_args):
-    """This method is called when this checkbox is checked or unchecked"""
-    search_using_kwargs(self)
-    pass
-    
    
 # add a new function on the there and then =======================================
   
@@ -367,17 +383,7 @@ class Lists(ListsTemplate):
     open_form('Load_CSV')
     pass
 
-  def search_title_and_description_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    t = TextBox(placeholder="Enter Search text")
-    alert(content=t,
-      title="Text Search  ")
 
-    results = anvil.server.call('text_search_changes', t.text)
-    self.repeating_panel_1.items = results
-    self.hits_textbox.text  = len(results)
-
-    pass
 
   def text_search_textbox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
