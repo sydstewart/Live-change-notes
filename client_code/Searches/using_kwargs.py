@@ -231,7 +231,8 @@ def search_using_kwargs(self):
        
 # Search using kwargs      
     print('kwargs=',kwargs)
-    results= app_tables.change_notes.search(tables.order_by('change_date', ascending = False),**kwargs)
+    results = anvil.server.call('get_results', kwargs)
+    # results= app_tables.change_notes.search(tables.order_by('change_date', ascending = False),**kwargs)
     # results = app_tables.change_notes.search(q.any_of(**kwargs)) 
     print('results', results)
     self.repeating_panel_1.items = results
