@@ -582,3 +582,4 @@ components:
     underline: false, icon: ''}
   name: label_18
   layout_properties: {slot: title}
+  data_bindings: []
