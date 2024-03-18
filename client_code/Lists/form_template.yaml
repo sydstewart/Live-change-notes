@@ -95,7 +95,7 @@ components:
     layout_properties: {grid_position: 'WOHPCZ,GTOZSS', full_width_row: true}
     components:
     - type: ColumnPanel
-      properties: {col_widths: '{"QMCDFR":2,"RPZGPK":3,"QXTBJR":4,"FQXRVI":4,"MDFHVI":6,"CJKLMN":5,"BXRYEI":5,"AXETKK":5,"YBHHIF":10,"LHADXX":5,"TNYBIN":2,"ZIKZGY":8,"GDUDHR":8,"FRFTJW":2,"IXNVJM":2,"IRGJPW":3,"DBDYRZ":6,"RGOZCH":5,"HYYWDP":2,"MFYDET":6,"MFERCC":6,"OAMWKC":6,"WCKEUB":5,"ETIFJB":2,"TZDFYJ":3,"CZUMGF":5}'}
+      properties: {col_widths: '{"QMCDFR":2,"RPZGPK":3,"QXTBJR":4,"FQXRVI":4,"MDFHVI":6,"CJKLMN":5,"BXRYEI":5,"AXETKK":5,"YBHHIF":10,"LHADXX":5,"TNYBIN":2,"ZIKZGY":8,"GDUDHR":8,"FRFTJW":2,"IXNVJM":2,"IRGJPW":3,"DBDYRZ":2,"RGOZCH":5,"HYYWDP":2,"MFYDET":6,"MFERCC":6,"OAMWKC":6,"WCKEUB":5,"ETIFJB":5,"TZDFYJ":4,"CZUMGF":5}'}
       name: content_panel
       layout_properties: {slot: default, grid_position: 'EBYAGG,DJKOYT', full_width_row: true}
       components:
