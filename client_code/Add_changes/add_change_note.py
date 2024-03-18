@@ -42,7 +42,7 @@ def add_change_note(self):
                                   'due_date' : self.due_date.date,
                                   'investigator' : self.investigator_dropdown.selected_value,
                                   'possible_solution' : self.possible_solution_textbox.text,
-                                  # 'worst_case' : self.worst_case.textarea.text,
+                                  'worst_case' : self.worst_case_textbox.text, 
                                   'severity' : self.severity_number.text ,
                                   'probability' : self.probability_number.text,
                                   'visibility'  : self.visibility_number.text,
