@@ -312,7 +312,10 @@ class Change_note(Change_noteTemplate):
 
   def change_cancel_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raise_event('x-close-alert', value=None)
+    c =confirm(" Have you saved all your Edits?      If NOT please Press 'No' and then press the Save button   To continue to Cancel press 'Yes'")
+       
+    if c:
+        self.raise_event('x-close-alert', value=None)
     pass
 
   def priority_textbox_change(self, **event_args):
@@ -329,7 +332,10 @@ class Change_note(Change_noteTemplate):
 
   def bottom_cancel_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raise_event('x-close-alert', value=None)
+    c =confirm(" Have you saved all your Edits?      If NOT please Press 'No' and then press the Save button   To continue to Cancel press 'Yes'")
+       
+    if c:
+        self.raise_event('x-close-alert', value=None)
     pass
 
   # def bottom_save_btn_click(self, **event_args):
