@@ -8,8 +8,8 @@ from anvil.tables import app_tables
 
 
 def set_pick(self):
-
-      if not self.difficulty_textbox.text ==0 and not self.payoff_textbox.text ==0:
+      if self.difficulty_textbox.text and self.payoff_textbox.text :
+      # if not self.difficulty_textbox.text ==0 and not self.payoff_textbox.text ==0:
           # if (self.difficulty_textbox.text) <= 10: #or int(self.difficulty_textbox.text) >= 1:
                       self.ips_textbox.text= self.difficulty_textbox.text * self.payoff_textbox.text
                       if  self.difficulty_textbox.text >= 5 and self.payoff_textbox.text >= 5:
