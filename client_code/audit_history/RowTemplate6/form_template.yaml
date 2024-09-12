@@ -1,102 +1,73 @@
-container:
-  type: DataRowPanel
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true,
-    visible: true, font_size: 12, font: '', spacing_above: none, spacing_below: none,
-    italic: false, background: '', bold: false, underline: false}
 components:
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: text_box_1
+- data_bindings:
+  - {code: 'self.item[''when_changed''].strftime("%b %d %Y %I:%M %p") ', property: text, writeback: false}
   layout_properties: {column: FLIACQ}
-  data_bindings:
-  - {property: text, code: 'self.item[''when_changed''].strftime("%b %d %Y %I:%M %p") ',
-    writeback: false}
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: text_box_2
-  layout_properties: {column: SRZHNO}
-  data_bindings:
-  - {property: text, code: 'self.item[''change_date''].strftime("%b %d %Y %I:%M %p") ',
-    writeback: false}
+  name: text_box_1
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: 12, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''change_date''].strftime("%b %d %Y %I:%M %p") ', property: text, writeback: false}
   event_bindings: {pressed_enter: text_box_2_pressed_enter}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_1
-  layout_properties: {column: null}
-  components:
-  - type: DataGrid
+  layout_properties: {column: SRZHNO}
+  name: text_box_2
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: 12, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+  type: TextBox
+- components:
+  - components:
+    - layout_properties: {}
+      name: repeating_panel_1
+      properties: {item_template: audit_history.RowTemplate6.RowTemplate7, spacing_above: none, spacing_below: none}
+      type: RepeatingPanel
+    data_bindings: []
+    layout_properties: {full_width_row: true, grid_position: 'VCNHZQ,XYZKCZ'}
+    name: data_grid_1
     properties:
-      role: null
-      columns:
-      - {id: GAUFAM, title: Severity, data_key: severity, $$hashKey: 'object:1564',
-        width: '100'}
-      - {id: JJNQGA, title: Probability, data_key: probability, $$hashKey: 'object:1565',
-        width: '100'}
-      - {id: PKPIST, title: Visibility, data_key: visibility, $$hashKey: 'object:1566',
-        width: '100'}
-      - {id: FEORJN, title: RPN, data_key: rpn, $$hashKey: 'object:1570', width: '80',
-        expand: false}
-      - {id: CLOPTB, title: Priority, data_key: priority, $$hashKey: 'object:1573',
-        width: '100'}
-      - {id: MOYPNE, title: Worst Case, data_key: worst_case, $$hashKey: 'object:1572',
-        width: 137, expand: false}
-      - {id: BUTGBU, title: Mitigatiions, data_key: mitigations, $$hashKey: 'object:1633',
-        width: '130'}
-      - {id: NZZZLM, title: Investigator, data_key: investigator, $$hashKey: 'object:11633',
-        width: 219, expand: false}
-      - {id: VMHRIT, title: Possible Solution, data_key: possible_solution, $$hashKey: 'object:11635',
-        width: 296, expand: false}
-      - {id: YRYKGW, title: Released In, data_key: released_in_version, $$hashKey: 'object:11637',
-        width: ''}
       auto_header: true
-      tooltip: ''
+      background: ''
       border: ''
+      columns:
+      - {$$hashKey: 'object:1564', data_key: severity, id: GAUFAM, title: Severity, width: '100'}
+      - {$$hashKey: 'object:1565', data_key: probability, id: JJNQGA, title: Probability, width: '100'}
+      - {$$hashKey: 'object:1566', data_key: visibility, id: PKPIST, title: Visibility, width: '100'}
+      - {$$hashKey: 'object:1570', data_key: rpn, expand: false, id: FEORJN, title: RPN, width: '80'}
+      - {$$hashKey: 'object:1573', data_key: priority, id: CLOPTB, title: Priority, width: '100'}
+      - {$$hashKey: 'object:1572', data_key: worst_case, expand: false, id: MOYPNE, title: Worst Case, width: 137}
+      - {$$hashKey: 'object:1633', data_key: mitigations, id: BUTGBU, title: Mitigatiions, width: '130'}
+      - {$$hashKey: 'object:11633', data_key: investigator, expand: false, id: NZZZLM, title: Investigator, width: 219}
+      - {$$hashKey: 'object:11635', data_key: possible_solution, expand: false, id: VMHRIT, title: Possible Solution, width: 296}
+      - {$$hashKey: 'object:11637', data_key: released_in_version, id: YRYKGW, title: Released In, width: ''}
       foreground: ''
+      role: null
       rows_per_page: 20
-      visible: true
-      wrap_on: never
       show_page_controls: true
       spacing_above: small
       spacing_below: small
-      background: ''
-    name: data_grid_1
-    layout_properties: {grid_position: 'VCNHZQ,XYZKCZ', full_width_row: true}
-    components:
-    - type: RepeatingPanel
-      properties: {spacing_above: none, spacing_below: none, item_template: audit_history.RowTemplate6.RowTemplate7}
-      name: repeating_panel_1
-      layout_properties: {}
-    data_bindings: []
-- type: Button
-  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: 'fa:eye'}
-  name: button_1
+      tooltip: ''
+      visible: true
+      wrap_on: never
+    type: DataGrid
+  layout_properties: {column: null}
+  name: column_panel_1
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- event_bindings: {click: button_1_click}
   layout_properties: {column: VORFEE}
-  event_bindings: {click: button_1_click}
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: due_date
+  name: button_1
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: 'fa:eye', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Button
+- data_bindings:
+  - {code: 'self.item[''due_date'']', property: text, writeback: true}
   layout_properties: {column: GJJTNB}
-  data_bindings:
-  - {property: text, code: 'self.item[''due_date'']', writeback: true}
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: text_box_3
+  name: due_date
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: 12, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''new_change_note_id'']', property: text, writeback: true}
   layout_properties: {column: ONYHGE}
-  data_bindings:
-  - {property: text, code: 'self.item[''new_change_note_id'']', writeback: true}
+  name: text_box_3
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: 12, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+  type: TextBox
+container:
+  properties: {align: left, auto_display_data: true, background: '', bold: false, border: '', font: '', font_size: 12, foreground: '', italic: false, role: null, spacing_above: none, spacing_below: none, tooltip: '', underline: false, visible: true}
+  type: DataRowPanel
 is_package: true
