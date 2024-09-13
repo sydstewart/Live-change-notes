@@ -500,7 +500,7 @@ dependencies:
   version: {dev: false}
 - dep_id: ZN6OLD42A3SB6ADQ
   version: {dev: false}
-metadata: {logo_img: 'asset:4S logo small.png', title: Change Notes v 1.09}
+metadata: {logo_img: 'asset:4S logo small.png', title: Change Notes v 1.10}
 name: Dev of Live Change Notes
 package_name: Change_Notes
 renamed: true
